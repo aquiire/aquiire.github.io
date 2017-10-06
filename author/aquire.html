@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Aquire">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Aquire - Articles by Aquire | Aquire</title>
+
+        <link rel="alternate" type="application/atom+xml" title="Aquire blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>.codehilite .hll { background-color: #404040 }
+.codehilite .c { color: #999999; font-style: italic } /* Comment */
+.codehilite .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.codehilite .g { color: #d0d0d0 } /* Generic */
+.codehilite .k { color: #6ab825; font-weight: bold } /* Keyword */
+.codehilite .l { color: #d0d0d0 } /* Literal */
+.codehilite .n { color: #d0d0d0 } /* Name */
+.codehilite .o { color: #d0d0d0 } /* Operator */
+.codehilite .x { color: #d0d0d0 } /* Other */
+.codehilite .p { color: #d0d0d0 } /* Punctuation */
+.codehilite .cm { color: #999999; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
+.codehilite .c1 { color: #999999; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
+.codehilite .gd { color: #d22323 } /* Generic.Deleted */
+.codehilite .ge { color: #d0d0d0; font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #d22323 } /* Generic.Error */
+.codehilite .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #589819 } /* Generic.Inserted */
+.codehilite .go { color: #cccccc } /* Generic.Output */
+.codehilite .gp { color: #aaaaaa } /* Generic.Prompt */
+.codehilite .gs { color: #d0d0d0; font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #ffffff; text-decoration: underline } /* Generic.Subheading */
+.codehilite .gt { color: #d22323 } /* Generic.Traceback */
+.codehilite .kc { color: #6ab825; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #6ab825; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #6ab825; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #6ab825 } /* Keyword.Pseudo */
+.codehilite .kr { color: #6ab825; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #6ab825; font-weight: bold } /* Keyword.Type */
+.codehilite .ld { color: #d0d0d0 } /* Literal.Date */
+.codehilite .m { color: #3677a9 } /* Literal.Number */
+.codehilite .s { color: #ed9d13 } /* Literal.String */
+.codehilite .na { color: #bbbbbb } /* Name.Attribute */
+.codehilite .nb { color: #24909d } /* Name.Builtin */
+.codehilite .nc { color: #447fcf; text-decoration: underline } /* Name.Class */
+.codehilite .no { color: #40ffff } /* Name.Constant */
+.codehilite .nd { color: #ffa500 } /* Name.Decorator */
+.codehilite .ni { color: #d0d0d0 } /* Name.Entity */
+.codehilite .ne { color: #bbbbbb } /* Name.Exception */
+.codehilite .nf { color: #447fcf } /* Name.Function */
+.codehilite .nl { color: #d0d0d0 } /* Name.Label */
+.codehilite .nn { color: #447fcf; text-decoration: underline } /* Name.Namespace */
+.codehilite .nx { color: #d0d0d0 } /* Name.Other */
+.codehilite .py { color: #d0d0d0 } /* Name.Property */
+.codehilite .nt { color: #6ab825; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #40ffff } /* Name.Variable */
+.codehilite .ow { color: #6ab825; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #666666 } /* Text.Whitespace */
+.codehilite .mf { color: #3677a9 } /* Literal.Number.Float */
+.codehilite .mh { color: #3677a9 } /* Literal.Number.Hex */
+.codehilite .mi { color: #3677a9 } /* Literal.Number.Integer */
+.codehilite .mo { color: #3677a9 } /* Literal.Number.Oct */
+.codehilite .sb { color: #ed9d13 } /* Literal.String.Backtick */
+.codehilite .sc { color: #ed9d13 } /* Literal.String.Char */
+.codehilite .sd { color: #ed9d13 } /* Literal.String.Doc */
+.codehilite .s2 { color: #ed9d13 } /* Literal.String.Double */
+.codehilite .se { color: #ed9d13 } /* Literal.String.Escape */
+.codehilite .sh { color: #ed9d13 } /* Literal.String.Heredoc */
+.codehilite .si { color: #ed9d13 } /* Literal.String.Interpol */
+.codehilite .sx { color: #ffa500 } /* Literal.String.Other */
+.codehilite .sr { color: #ed9d13 } /* Literal.String.Regex */
+.codehilite .s1 { color: #ed9d13 } /* Literal.String.Single */
+.codehilite .ss { color: #ed9d13 } /* Literal.String.Symbol */
+.codehilite .bp { color: #24909d } /* Name.Builtin.Pseudo */
+.codehilite .vc { color: #40ffff } /* Name.Variable.Class */
+.codehilite .vg { color: #40ffff } /* Name.Variable.Global */
+.codehilite .vi { color: #40ffff } /* Name.Variable.Instance */
+.codehilite .il { color: #3677a9 } /* Literal.Number.Integer.Long */</style>
+        <style>body{margin:0;padding:0;font:15px 'Source Sans Pro',sans-serif;line-height:1.6em;color:#222;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}a{color:#007ee5;text-decoration:none}a:hover{color:#007ee5;text-decoration:none}header.main-header{background:none repeat scroll 0% 0% #2A66C0;margin-bottom:0px}header.main-header a{color:#fff}header.main-header .container{max-width:1000px}header.main-header .container nav a:hover{background-color:#2A66C0}article{margin:0}article header{margin-bottom:20px;padding-bottom:20px}article header h1{margin-bottom:2px;font-weight:700;color:#000}article header time{color:#9E9E9E;font-size:0.85em;float:right}article header time.left{color:#9E9E9E;font-size:0.85em;float:left}article p{font-size:16px;margin-bottom:20px;line-height:1.6em}article p.note{background:#f5f5f5;border:1px solid #ddd;padding:0.533em 0.733em}article p.update{background-color:#FEEFB3;border:1px solid #e6e68a;padding:0.533em 0.733em}article p.alert{background-color:#ffe2e2;border:1px solid #ffb2b2;padding:0.533em 0.733em}article ul,article ol{margin-top:0px;margin-bottom:25px}article li{font-size:16px;line-height:1.6em}article a:hover{text-decoration:underline}article blockquote{border-left:2px solid #c7c7cc;color:#666;margin:30px 0;padding:0 0 0 25px}article img{max-width:100%}article code{color:#333;background-color:#EEE;border-radius:0;font-size:13px}article .codehilite pre{border-radius:0;background-color:#202020;color:#d0d0d0}article .codehilite pre code{border:none}article .codehilite pre.bash{background-color:#000;color:#FFF}article .meta{font-size:11px}article .meta a:hover{text-decoration:none}article .meta div{margin-bottom:20px;display:block}article .meta a.tag{margin:0 10px 10px 0;padding:1px 12px;display:inline-block;font-size:12px;color:rgba(0,0,0,0.6);background:rgba(0,0,0,0.05)}article .meta a.tag:hover{background:rgba(0,0,0,0.15)}article .meta a.read_more,article .meta a.comments_btn{font-size:14px;font-weight:800;padding:10px 20px;color:#007EE5;background:#FFF;border:1px solid #007EE5}article .meta a.read_more:hover,article .meta a.comments_btn:hover{color:#FFF;background:#007EE5}.index{max-width:700px}.index article header h2{font-size:36px;margin-bottom:2px;font-weight:700}.index article header h2 a{color:#000}.index article header h2 a:hover{color:#007ee5;text-decoration:none}.index .separator{padding:40px 0 0 0;margin:0 0 40px 0;height:10px;border-bottom:solid 1px #CCC}.index .pagination{display:block;margin-bottom:100px}.index .pagination .left{text-align:right}.index .pagination .right{text-align:left}.index .pagination a{display:inline-block;border:2px solid #007EE5;margin:0 5px;padding:8px 20px;font-weight:bold;color:#007EE5}.index .pagination a:hover{color:#FFF;background:#007EE5}.post{max-width:700px}.post h2:before{content:"# ";font-weight:bold;color:#DDD}.post h3:before{content:"## ";font-weight:bold;color:#DDD}.post h4:before{content:"### ";font-weight:bold;color:#DDD}.post article .meta{margin:50px 0 100px}.list{max-width:700px}.list ul.double-list{margin:0 auto 60px;padding:0;list-style-type:none}.list ul.double-list li{padding:5px 0}.list ul.double-list li h2{font-size:1em;display:inline;font-weight:normal}.list ul.double-list li span{font-family:sans-serif;text-transform:uppercase;text-align:right;float:right;padding-top:3px;font-size:12px;color:#999}.full-width-content{padding-top:10px;padding-left:0px;padding-right:0px;margin-left:-20px;margin-right:-20px}.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{padding-right:0px;padding-left:0px}</style>
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/" title="Home" class="title">Aquire</a></li>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="http://github.com/aquiire" title="aquiire's Github" rel="me">Github</a></li>
+                            <li><a href="http://twitter.com/aquirerojek" title="aquirerojek Twitter" rel="me">Twitter</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/feeds/all.atom.xml" title="aquiire.github.io RSS feed" rel="me">RSS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container index">
+
+  <article>
+    <header>
+      <h2><a href="/notebooks/i-eye-i.html">I eye I</a></h2>
+      <time datetime="" title="2017-09-22T21:47:00+00:00" pubdate>September 22, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p><strong>AI</strong> - Artificial intelligence</p>
+<p><strong>I</strong> -  intelligence</p>
+<p><strong>I</strong> - someone who has self consciousness.</p>
+<p>What is self consciousness?</p>
+<p>Is a stone self conscious about itself?</p>
+</blockquote>
+<p>We don't know the answer yet.</p>
+<p>Once we figure out a way to communicate with a stone we might find the answer.</p>
+<p>If we assume that there's nothing else than modern western science has explanations, then, all the things we know of, stones, living things including human beings are made of atoms which are made of electrons, protons and neutrons. So what made stones not to use smart phones and human beings to use them?</p>
+<p>One may say that the difference between a stone and an ant lies on the fact how the atoms interact with each other. The patterns made by the atoms in an ant differs from that of a stone.</p>
+<p>We say for life to exist things like water, goldilocks zone, oxygen gas, carbon are necessary. What is life? Is it chunks of atoms making carbon dioxide and water with glucose and oxygen to generate energy to make happen things such as displace their positions, make chunks of atoms with a similar pattern to themselves, etc.?</p>
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/i-eye-i.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/ai.html" class="tag">AI</a>
+            <a href="/tag/existence.html" class="tag">existence</a>
+            <a href="/tag/consciousness.html" class="tag">consciousness</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/dhiivr-mn-slkunnu.html">ධීවර මං සලකුණු</a></h2>
+      <time datetime="" title="2017-09-11T22:23:00+00:00" pubdate>September 11, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>අපේ සීයා ධීවරයෙකි. මා හට සීයා ගැන හරි මතකයක් නොමැති මුත් බොහෝ දෙන මා හට සීයාගේ මුහුණවර ඇති බව පවසා ඇත. සීයලා මුහුදු ගියේ ඔරුවෙන් රෑටය. රෑට මාළු වැඩියෙන් අසුවන බවට ධීවරයන් ගේ විශ්වාසයක් පවතී. සීයා ට ඔරු වර්ග 2ක් තිබිණ. එකක් පොඩි ඔරුවයි; අනෙක ලොකු ඔරුවයි. ලොකු ඔරුවෙන් පිටත් වන්නේ හවස පහ හය ට විතර ය. නැවත උදේ හය හත වනවිට ළඟා වේ. ලොකු ඔරුවේ හතර පස් දෙනෙකුට යා හැකි වෙතත් පොඩි ඔරුවේ යන්න පුළුවන් වන්නේ දෙදෙනෙකුට පමණි. පොඩි ඔරුව සාමාන්‍යයෙන් පාන්දර හතර පහට පිටත් වී නැවත දහය එකොළහ වන විට එයි.</p>
+<p>ජීවිත පරදුවට තියමිත් මහ ගන අඳුරේ හබල් ගසමින් අගක් මුලක් ඉමක් කොණක් නැති මහා මුහුද සමඟ සීයලා ඔට්ටු වූ හැටි අසන විට පුදුම හිතේ. සීයා තාත්තාට මුහුදු රස්සාව තහනම් කළේ ඒ රස්සාවේ බිහිසුණුකම මැනැවින් දැන සිටි නිසා විය යුතුය. බිහිසුණු බවටත් එහා ගිය අවිනිශ්චිතතාවයක් ඒ රස්සාව හා වෙළී පවතී. අද මාළු අසුවූ පලියට හෙට අසු වන්නේවත් අද වලාලේ වූ පළිට හෙට එසේ වන්නෙවත් නැත. එසේ වතුදු සීයා තම රස්සාවට සාප කළේවත් නිග්‍රහ කළේවත් නැත. සීයා තම රස්සාව ගැන ආඩම්බර වූ අතර තමා කරන්නේ කාටවත් යටත් නොවන රස්සාවක් බව නිතර කීවේ ය.</p>
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/dhiivr-mn-slkunnu.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/maths.html" class="tag">maths</a>
+            <a href="/tag/life.html" class="tag">life</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/imitating-an-ai.html">Imitating An Ai</a></h2>
+      <time datetime="" title="2017-09-10T16:53:00+00:00" pubdate>September 10, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We want AI to imitate us. This is a try to imitate an AI who write poems.</p>
+<h2 id="Peppermints-and-Mint---Aquire">
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/imitating-an-ai.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/ai.html" class="tag">AI</a>
+            <a href="/tag/art.html" class="tag">art</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/mscoco-dataset-python-api.html">MSCOCO dataset Python API</a></h2>
+      <time datetime="" title="2017-09-05T14:27:00+00:00" pubdate>September 05, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Machine Learning හා Machine Vision යනු වර්තමානය වන විට ඉතා සීඝ්‍රයෙන් දියුණු වන ඉතාමත් ගතික ක්⁣ෂේත්‍රයකි. Machine learning හි දළ වශයෙන් සිදු කරන්නේ යන්ත්‍රවලට සිතන්නට පුරුදු කිරීමක් යැයි පැවසුවොත් වරදක් නැත. මනුෂ්‍යයන් වශයෙන් අපත් යමක් ප්‍රගුණ කිරීමට පුහුණුව උපකාර කර ගන්නා අවස්ථා එමටය. එපරිදි යන්ත්‍රයකට තීරණ ගැනීමට පුහුණු කිරීමට ඉතා විශාල දත්ත ප්‍රමාණයක් උවමනා වේ. මේ දත්ත ඌණතාවයට පිළියමක් වශයෙන් මෙන්ම මිනුම් ලකුණක් (benchmark එකක්) පවත්වාගැනීමට හා challenges වශයෙන් විවිධ datasets කලින් කලට එළි දකී. නිදසුන් ලෙස <a href="image-net.org/">Imagenet</a>, <a href="http://yann.lecun.com/exdb/mnist/">Lenet</a>, <a href="http://host.robots.ox.ac.uk/pascal/VOC/">Pascal VOC</a> යනාදිය දැක්විය හැකිය.</p>
+<p>AI පිළිබඳ උනන්දුවක් දක්වන ඔබ <a href="http://cocodataset.org/">MSCOCO dataset</a> එක ගැන අසා ඇති. 30GB ටත් වඩා වැඩි ධාරිතාවකින් යුතු ඡායාරූප 200000ටත් වඩා ඇති මෙම එකතුව වර්තමානය වන විට Machine Vision community එක තුළ බොහෝ පර්යේෂණ සඳහා භාවිත වේ.</p>
+<p>ඔබට MSCOCO වෙබ් පිටුවට පිවිසුණහොත් ඉතා පහසුවෙන් එම dataset එක බාගත කළ හැකිය. නමුත් එම සම්පූර්ණ dataset එක අනවශ්‍ය වන විටකදී අවශ්‍ය ඡායාරෑප පමණක්  බාගත හැකි ආකාරයක් මෙම ලිපියෙන් සාකච්ඡා කෙරේ.</p>
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/mscoco-dataset-python-api.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/python.html" class="tag">python</a>
+            <a href="/tag/datascience.html" class="tag">datascience</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/python-bhaavityen-prstaar-andinnee-kohomd.html">Python භාවිතයෙන් ප්‍රස්තාර අඳින්නේ කොහොමද?</a></h2>
+      <time datetime="" title="2017-09-01T08:31:00+00:00" pubdate>September 01, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:</p>
+<ul>
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/python-bhaavityen-prstaar-andinnee-kohomd.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/python.html" class="tag">python</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/phsu-geviimee-krmy.html">පහසු ගෙවීමේ ක්‍රමය</a></h2>
+      <time datetime="" title="2017-08-31T16:15:00+00:00" pubdate>August 31, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="පිවිසුම">
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/phsu-geviimee-krmy.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/maths.html" class="tag">maths</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/a-sequence.html">A Sequence</a></h2>
+      <time datetime="" title="2017-08-20T18:14:00+00:00" pubdate>August 20, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I saw it <a href="https://www.peeranswer.com/question/592201f5df6bb4ca0ff5e364">here</a>.</p>
+<h2 id="Claim:">
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/a-sequence.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/maths.html" class="tag">maths</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/totient-stuff.html">Totient Stuff</a></h2>
+      <time datetime="" title="2017-08-18T12:05:00+00:00" pubdate>August 18, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the problem copied from <a href="http://mathb.in/152113">here</a>  and asked <a href="https://www.peeranswer.com/question/5996699e848d3c0360b31ba5">here</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>$Definitions$</p>
+<p>Define indicator function when $\varphi(k)$ divides $n$:
+$$\textbf{1}_{\varphi(k)}(n) = \left\{\begin{matrix} 1 &amp; \varphi(k) \mid n \\ 0 &amp; \varphi(k) \nmid n  \end{matrix} \right.$$</p>
+<p>Number of times $n$ is divisible by the totient function:
+$$h(n) = \sum_{k=1}^\infty \textbf{1}_{\varphi(k)}(n) $$</p>
+<p>Number of divisors of n:
+$$\tau(n) = \sum_{d|n} 1$$</p>
+<hr>
+<p>$Question$</p>
+<p>What's the max value of $\frac{h(n)}{n}$ and/or $\frac{h(n)}{\tau(n)}$ or does no max exist?</p>
+<hr>
+<p>Main thing I'm interested in is Euler's theorem, when $\gcd(a,b)=1$:</p>
+<p>$$a^{\varphi(b)} \equiv 1 \mod b$$</p>
+<p>Solving this question for some n that maximizes either of those values above would give a kind of "optimal" solution for:</p>
+<p>$$a^n \equiv 1 \mod n$$</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/totient-stuff.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/maths.html" class="tag">maths</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/chicken-mcnuggets.html">Chicken McNuggets</a></h2>
+      <time datetime="" title="2017-08-07T17:42:00+00:00" pubdate>August 07, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Question is <a href="https://www.peeranswer.com/question/5973d39ec7e9b5285116fc88">here</a></p>
+<p>Imagine we have $a$ number of bins.</p>
+<p>One bin for numbers divisible by $a$, $\leftarrow$ bin $A_0$</p>
+<p>another for numbers $1$ more than numbers divisible by $a$, $\leftarrow$ bin $A_1$</p>
+<p>another for numbers $2$ more than numbers divisible by $a$,$\leftarrow$ bin $A_2$</p>
+<p>...........................................................,</p>
+<p>............................................................,</p>
+<p>another for numbers $a-1$ more than numbers divisible by $a$.$\leftarrow$ bin $A_{a-1}$</p>
+<h5 id="Step-0">Step 0<a class="anchor-link" href="#Step-0">&#182;</a></h5><blockquote><p>from $n\ge0$ we are able to fill $A_0$ from the expression $ax+by$, by $y=0$ and $x=0,1,\ldots$</p>
+</blockquote>
+<p>Since $a$ and $b$ don't have common divisors except $1$, $b$ cannot be in bin $A_0$.</p>
+<h5 id="Step-1">Step 1<a class="anchor-link" href="#Step-1">&#182;</a></h5><blockquote><p>So from $n\ge b$ fill $A_{b \bmod a}$ from the expression $ax+by$, by $y=1$ and $x=0,1,\ldots$</p>
+</blockquote>
+<p>Now we have considered 2 bins.</p>
+<p>Then we can think where would $2b$ go. It can't go to $A_0$ because before $ab$ we can't find a multiply of $b$ that can be divided by $a$ (We are only considering $b,2b,3b,\ldots$). $2b$ can't go to bin $A_{b\bmod a}$ either.</p>
+<p>let $b=aq_1+r_1$ [1] where $q_1$ and $r_1$ are the quotient and remainder ($b\bmod a$).</p>
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/chicken-mcnuggets.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/maths.html" class="tag">maths</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="/notebooks/optimum-reception.html">Optimum Reception</a></h2>
+      <time datetime="" title="2017-06-05T09:00:00+00:00" pubdate>June 05, 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="/notebooks/optimum-reception.html" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="/tag/digital-communications.html" class="tag">digital-communications</a>
+            <a href="/tag/probability.html" class="tag">probability</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+
+  <nav class="pagination row">
+    <div class="col-xs-6 left">
+    </div>
+    <div class="col-xs-6 right">
+    </div>
+  </nav>
+
+  </div>
+
+</div>
+
+        </div>
+    </body>
+</html>

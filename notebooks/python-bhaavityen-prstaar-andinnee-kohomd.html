@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Aquire">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Python භාවිතයෙන් ප්‍රස්තාර අඳින්නේ කොහොමද? | Aquire</title>
+
+        <link rel="alternate" type="application/atom+xml" title="Aquire blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>.codehilite .hll { background-color: #404040 }
+.codehilite .c { color: #999999; font-style: italic } /* Comment */
+.codehilite .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.codehilite .g { color: #d0d0d0 } /* Generic */
+.codehilite .k { color: #6ab825; font-weight: bold } /* Keyword */
+.codehilite .l { color: #d0d0d0 } /* Literal */
+.codehilite .n { color: #d0d0d0 } /* Name */
+.codehilite .o { color: #d0d0d0 } /* Operator */
+.codehilite .x { color: #d0d0d0 } /* Other */
+.codehilite .p { color: #d0d0d0 } /* Punctuation */
+.codehilite .cm { color: #999999; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
+.codehilite .c1 { color: #999999; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
+.codehilite .gd { color: #d22323 } /* Generic.Deleted */
+.codehilite .ge { color: #d0d0d0; font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #d22323 } /* Generic.Error */
+.codehilite .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #589819 } /* Generic.Inserted */
+.codehilite .go { color: #cccccc } /* Generic.Output */
+.codehilite .gp { color: #aaaaaa } /* Generic.Prompt */
+.codehilite .gs { color: #d0d0d0; font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #ffffff; text-decoration: underline } /* Generic.Subheading */
+.codehilite .gt { color: #d22323 } /* Generic.Traceback */
+.codehilite .kc { color: #6ab825; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #6ab825; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #6ab825; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #6ab825 } /* Keyword.Pseudo */
+.codehilite .kr { color: #6ab825; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #6ab825; font-weight: bold } /* Keyword.Type */
+.codehilite .ld { color: #d0d0d0 } /* Literal.Date */
+.codehilite .m { color: #3677a9 } /* Literal.Number */
+.codehilite .s { color: #ed9d13 } /* Literal.String */
+.codehilite .na { color: #bbbbbb } /* Name.Attribute */
+.codehilite .nb { color: #24909d } /* Name.Builtin */
+.codehilite .nc { color: #447fcf; text-decoration: underline } /* Name.Class */
+.codehilite .no { color: #40ffff } /* Name.Constant */
+.codehilite .nd { color: #ffa500 } /* Name.Decorator */
+.codehilite .ni { color: #d0d0d0 } /* Name.Entity */
+.codehilite .ne { color: #bbbbbb } /* Name.Exception */
+.codehilite .nf { color: #447fcf } /* Name.Function */
+.codehilite .nl { color: #d0d0d0 } /* Name.Label */
+.codehilite .nn { color: #447fcf; text-decoration: underline } /* Name.Namespace */
+.codehilite .nx { color: #d0d0d0 } /* Name.Other */
+.codehilite .py { color: #d0d0d0 } /* Name.Property */
+.codehilite .nt { color: #6ab825; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #40ffff } /* Name.Variable */
+.codehilite .ow { color: #6ab825; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #666666 } /* Text.Whitespace */
+.codehilite .mf { color: #3677a9 } /* Literal.Number.Float */
+.codehilite .mh { color: #3677a9 } /* Literal.Number.Hex */
+.codehilite .mi { color: #3677a9 } /* Literal.Number.Integer */
+.codehilite .mo { color: #3677a9 } /* Literal.Number.Oct */
+.codehilite .sb { color: #ed9d13 } /* Literal.String.Backtick */
+.codehilite .sc { color: #ed9d13 } /* Literal.String.Char */
+.codehilite .sd { color: #ed9d13 } /* Literal.String.Doc */
+.codehilite .s2 { color: #ed9d13 } /* Literal.String.Double */
+.codehilite .se { color: #ed9d13 } /* Literal.String.Escape */
+.codehilite .sh { color: #ed9d13 } /* Literal.String.Heredoc */
+.codehilite .si { color: #ed9d13 } /* Literal.String.Interpol */
+.codehilite .sx { color: #ffa500 } /* Literal.String.Other */
+.codehilite .sr { color: #ed9d13 } /* Literal.String.Regex */
+.codehilite .s1 { color: #ed9d13 } /* Literal.String.Single */
+.codehilite .ss { color: #ed9d13 } /* Literal.String.Symbol */
+.codehilite .bp { color: #24909d } /* Name.Builtin.Pseudo */
+.codehilite .vc { color: #40ffff } /* Name.Variable.Class */
+.codehilite .vg { color: #40ffff } /* Name.Variable.Global */
+.codehilite .vi { color: #40ffff } /* Name.Variable.Instance */
+.codehilite .il { color: #3677a9 } /* Literal.Number.Integer.Long */</style>
+        <style>body{margin:0;padding:0;font:15px 'Source Sans Pro',sans-serif;line-height:1.6em;color:#222;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}a{color:#007ee5;text-decoration:none}a:hover{color:#007ee5;text-decoration:none}header.main-header{background:none repeat scroll 0% 0% #2A66C0;margin-bottom:0px}header.main-header a{color:#fff}header.main-header .container{max-width:1000px}header.main-header .container nav a:hover{background-color:#2A66C0}article{margin:0}article header{margin-bottom:20px;padding-bottom:20px}article header h1{margin-bottom:2px;font-weight:700;color:#000}article header time{color:#9E9E9E;font-size:0.85em;float:right}article header time.left{color:#9E9E9E;font-size:0.85em;float:left}article p{font-size:16px;margin-bottom:20px;line-height:1.6em}article p.note{background:#f5f5f5;border:1px solid #ddd;padding:0.533em 0.733em}article p.update{background-color:#FEEFB3;border:1px solid #e6e68a;padding:0.533em 0.733em}article p.alert{background-color:#ffe2e2;border:1px solid #ffb2b2;padding:0.533em 0.733em}article ul,article ol{margin-top:0px;margin-bottom:25px}article li{font-size:16px;line-height:1.6em}article a:hover{text-decoration:underline}article blockquote{border-left:2px solid #c7c7cc;color:#666;margin:30px 0;padding:0 0 0 25px}article img{max-width:100%}article code{color:#333;background-color:#EEE;border-radius:0;font-size:13px}article .codehilite pre{border-radius:0;background-color:#202020;color:#d0d0d0}article .codehilite pre code{border:none}article .codehilite pre.bash{background-color:#000;color:#FFF}article .meta{font-size:11px}article .meta a:hover{text-decoration:none}article .meta div{margin-bottom:20px;display:block}article .meta a.tag{margin:0 10px 10px 0;padding:1px 12px;display:inline-block;font-size:12px;color:rgba(0,0,0,0.6);background:rgba(0,0,0,0.05)}article .meta a.tag:hover{background:rgba(0,0,0,0.15)}article .meta a.read_more,article .meta a.comments_btn{font-size:14px;font-weight:800;padding:10px 20px;color:#007EE5;background:#FFF;border:1px solid #007EE5}article .meta a.read_more:hover,article .meta a.comments_btn:hover{color:#FFF;background:#007EE5}.index{max-width:700px}.index article header h2{font-size:36px;margin-bottom:2px;font-weight:700}.index article header h2 a{color:#000}.index article header h2 a:hover{color:#007ee5;text-decoration:none}.index .separator{padding:40px 0 0 0;margin:0 0 40px 0;height:10px;border-bottom:solid 1px #CCC}.index .pagination{display:block;margin-bottom:100px}.index .pagination .left{text-align:right}.index .pagination .right{text-align:left}.index .pagination a{display:inline-block;border:2px solid #007EE5;margin:0 5px;padding:8px 20px;font-weight:bold;color:#007EE5}.index .pagination a:hover{color:#FFF;background:#007EE5}.post{max-width:700px}.post h2:before{content:"# ";font-weight:bold;color:#DDD}.post h3:before{content:"## ";font-weight:bold;color:#DDD}.post h4:before{content:"### ";font-weight:bold;color:#DDD}.post article .meta{margin:50px 0 100px}.list{max-width:700px}.list ul.double-list{margin:0 auto 60px;padding:0;list-style-type:none}.list ul.double-list li{padding:5px 0}.list ul.double-list li h2{font-size:1em;display:inline;font-weight:normal}.list ul.double-list li span{font-family:sans-serif;text-transform:uppercase;text-align:right;float:right;padding-top:3px;font-size:12px;color:#999}.full-width-content{padding-top:10px;padding-left:0px;padding-right:0px;margin-left:-20px;margin-right:-20px}.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{padding-right:0px;padding-left:0px}</style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bokeh/0.12.7/bokeh.min.css"></script>
+    </head>
+
+    <body>
+        <header class="navbar navbar-static-top bs-docs-nav main-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/" title="Home" class="title">Aquire</a></li>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="http://github.com/aquiire" title="aquiire's Github" rel="me">Github</a></li>
+                            <li><a href="http://twitter.com/aquirerojek" title="aquirerojek Twitter" rel="me">Twitter</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/feeds/all.atom.xml" title="aquiire.github.io RSS feed" rel="me">RSS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Python භාවිතයෙන් ප්‍රස්තාර අඳින්නේ කොහොමද?</h1>
+            <time datetime="article.date.isoformat()" pubdate>September 01, 2017</time>
+        </header>
+
+        <div class="article_content">
+            <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:</p>
+<ul>
+<li><a href="https://matplotlib.org">Matplotlib</a></li>
+<li><a href="http://seaborn.pydata.org">Seaborn</a></li>
+<li><a href="bokeh.pydata.org">Bokeh</a></li>
+</ul>
+<p>මේවා අතරින් ප්‍රමුඛතමයා <code>matplotlib</code> වේ. <code>seaborn</code> යනු <code>matplotlib</code> හිම දිගුවකි. <code>matplotlib</code> තවම <a href="https://github.com/matplotlib/matplotlib/issues/8765">සිංහල බසට පහසුකම් සලසන්නේ නැති</a> බැවින් මේ ලිපියෙන් අවධානය යොමු කරන්නේ <code>bokeh</code> වෙතයි.</p>
+<h2 id="bokeh-ස්ථාපනය-කිරීම"><code>bokeh</code> &#3523;&#3530;&#3502;&#3535;&#3508;&#3505;&#3514; &#3482;&#3538;&#3515;&#3539;&#3512;<a class="anchor-link" href="#bokeh-ස්ථාපනය-කිරීම">&#182;</a></h2><p>Python Package Manager ඔබේ පරිගණකයේ ස්ථාපනය ව පවතී නම්, විධාන පිවිසුමේ (command prompt) හෝ පර්යන්තයේ (Terminal),</p>
+<div class="highlight"><pre><span></span>pip install bokeh
+</pre></div>
+<p>විධානය මඟින් <code>bokeh</code> පහසුවෙන් ස්ථාපනය කළ හැකිය.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="මූලික-නිදසුනක්">&#3512;&#3542;&#3517;&#3538;&#3482; &#3505;&#3538;&#3503;&#3523;&#3540;&#3505;&#3482;&#3530;<a class="anchor-link" href="#මූලික-නිදසුනක්">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>මෙම සරල නිදසුනෙන් මෙරට 2015 වසරේ මාසික වර්ෂාපතනය විචලනය වූ අන්දම නිරූපණය කෙරේ. (<a href="http://sdwebx.worldbank.org/climateportal/index.cfm?page=downscaled_data_download&amp;menu=historical">මූලාශ්‍රය</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span>
+<span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+    <div class="bk-root">
+        <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
+        <span id="49994310-fef8-431b-9967-51b1be43c67c">Loading BokehJS ...</span>
+    </div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+
+<div id="1dbdaf7d-6434-4425-a8f6-d6a124bfcee3"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#1dbdaf7d-6434-4425-a8f6-d6a124bfcee3');
+
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof (root._bokeh_onload_callbacks) === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+
+  
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  var NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded() {
+    if (root.Bokeh !== undefined) {
+      var el = document.getElementById("49994310-fef8-431b-9967-51b1be43c67c");
+      if (el != null) {
+        el.textContent = "BokehJS " + Bokeh.version + " successfully loaded.";
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(display_loaded, 100)
+    }
+  }
+
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) { callback() });
+    }
+    finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.info("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(js_urls, callback) {
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.log("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.log("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = js_urls.length;
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      var s = document.createElement('script');
+      s.src = url;
+      s.async = false;
+      s.onreadystatechange = s.onload = function() {
+        root._bokeh_is_loading--;
+        if (root._bokeh_is_loading === 0) {
+          console.log("Bokeh: all BokehJS libraries loaded");
+          run_callbacks()
+        }
+      };
+      s.onerror = function() {
+        console.warn("failed to load library " + url);
+      };
+      console.log("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.getElementsByTagName("head")[0].appendChild(s);
+    }
+  };var element = document.getElementById("49994310-fef8-431b-9967-51b1be43c67c");
+  if (element == null) {
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '49994310-fef8-431b-9967-51b1be43c67c' but no matching script tag was found. ")
+    return false;
+  }
+
+  var js_urls = ["https://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.7.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-gl-0.12.7.min.js"];
+
+  var inline_js = [
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    
+    function(Bokeh) {
+      
+    },
+    
+    function(Bokeh) {
+      
+      document.getElementById("49994310-fef8-431b-9967-51b1be43c67c").textContent = "BokehJS is loading...";
+    },
+    function(Bokeh) {
+      console.log("Bokeh: injecting CSS: https://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.css");
+      Bokeh.embed.inject_css("https://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.css");
+      console.log("Bokeh: injecting CSS: https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.css");
+      Bokeh.embed.inject_css("https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.css");
+      console.log("Bokeh: injecting CSS: https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.7.min.css");
+      Bokeh.embed.inject_css("https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.7.min.css");
+    }
+  ];
+
+  function run_inline_js() {
+    
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      var cell = $(document.getElementById("49994310-fef8-431b-9967-51b1be43c67c")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.log("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(js_urls, function() {
+      console.log("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">rainfall</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.8749</span><span class="p">,</span><span class="mf">153.87</span><span class="p">,</span><span class="mf">101.196</span><span class="p">,</span><span class="mf">202.21</span><span class="p">,</span><span class="mf">100.853</span><span class="p">,</span><span class="mf">66.8216</span><span class="p">,</span><span class="mf">99.5796</span><span class="p">,</span><span class="mf">141.59</span><span class="p">,</span><span class="mf">219.311</span><span class="p">,</span><span class="mf">303.785</span><span class="p">,</span><span class="mf">405.224</span><span class="p">,</span><span class="mf">216.646</span><span class="p">]</span>
+<span class="n">month</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;2015 වසරේ මාසික වර්ෂාපතනය&#39;</span><span class="p">,</span><span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;මාසය&#39;</span><span class="p">,</span><span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;වර්ෂාපතනය (mm)&#39;</span><span class="p">,)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">month</span><span class="p">,</span> <span class="n">rainfall</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+
+    <div class="bk-root">
+        <div class="bk-plotdiv" id="50c44a66-9dd1-4d20-9a6d-2a21657247a3"></div>
+    </div>
+<script type="text/javascript">
+  
+  (function(root) {
+    function now() {
+      return new Date();
+    }
+  
+    var force = false;
+  
+    if (typeof (root._bokeh_onload_callbacks) === "undefined" || force === true) {
+      root._bokeh_onload_callbacks = [];
+      root._bokeh_is_loading = undefined;
+    }
+  
+  
+    
+    if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+      root._bokeh_timeout = Date.now() + 0;
+      root._bokeh_failed_load = false;
+    }
+  
+    var NB_LOAD_WARNING = {'data': {'text/html':
+       "<div style='background-color: #fdd'>\n"+
+       "<p>\n"+
+       "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+       "may be due to a slow or bad network connection. Possible fixes:\n"+
+       "</p>\n"+
+       "<ul>\n"+
+       "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+       "<li>use INLINE resources instead, as so:</li>\n"+
+       "</ul>\n"+
+       "<code>\n"+
+       "from bokeh.resources import INLINE\n"+
+       "output_notebook(resources=INLINE)\n"+
+       "</code>\n"+
+       "</div>"}};
+  
+    function display_loaded() {
+      if (root.Bokeh !== undefined) {
+        var el = document.getElementById("50c44a66-9dd1-4d20-9a6d-2a21657247a3");
+        if (el != null) {
+          el.textContent = "BokehJS " + Bokeh.version + " successfully loaded.";
+        }
+      } else if (Date.now() < root._bokeh_timeout) {
+        setTimeout(display_loaded, 100)
+      }
+    }
+  
+  
+    function run_callbacks() {
+      try {
+        root._bokeh_onload_callbacks.forEach(function(callback) { callback() });
+      }
+      finally {
+        delete root._bokeh_onload_callbacks
+      }
+      console.info("Bokeh: all callbacks have finished");
+    }
+  
+    function load_libs(js_urls, callback) {
+      root._bokeh_onload_callbacks.push(callback);
+      if (root._bokeh_is_loading > 0) {
+        console.log("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+        return null;
+      }
+      if (js_urls == null || js_urls.length === 0) {
+        run_callbacks();
+        return null;
+      }
+      console.log("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+      root._bokeh_is_loading = js_urls.length;
+      for (var i = 0; i < js_urls.length; i++) {
+        var url = js_urls[i];
+        var s = document.createElement('script');
+        s.src = url;
+        s.async = false;
+        s.onreadystatechange = s.onload = function() {
+          root._bokeh_is_loading--;
+          if (root._bokeh_is_loading === 0) {
+            console.log("Bokeh: all BokehJS libraries loaded");
+            run_callbacks()
+          }
+        };
+        s.onerror = function() {
+          console.warn("failed to load library " + url);
+        };
+        console.log("Bokeh: injecting script tag for BokehJS library: ", url);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      }
+    };var element = document.getElementById("50c44a66-9dd1-4d20-9a6d-2a21657247a3");
+    if (element == null) {
+      console.log("Bokeh: ERROR: autoload.js configured with elementid '50c44a66-9dd1-4d20-9a6d-2a21657247a3' but no matching script tag was found. ")
+      return false;
+    }
+  
+    var js_urls = [];
+  
+    var inline_js = [
+      function(Bokeh) {
+        (function() {
+          var fn = function() {
+            var docs_json = {"cf85e9f0-f129-42c0-99dc-c14e0f0de3a0":{"roots":{"references":[{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"ece31ccf-231f-4084-b713-cc37c5fbbd49","type":"BoxAnnotation"},{"attributes":{},"id":"0a375b2a-a8af-42b7-942b-b6916343dc3f","type":"LinearScale"},{"attributes":{},"id":"1bc7aada-7a38-4136-9def-b65ea9f43694","type":"HelpTool"},{"attributes":{"overlay":{"id":"ece31ccf-231f-4084-b713-cc37c5fbbd49","type":"BoxAnnotation"}},"id":"dc383686-c7bf-4b80-a2f5-4e9d730a26b3","type":"BoxZoomTool"},{"attributes":{"callback":null,"column_names":["y","x"],"data":{"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[20.8749,153.87,101.196,202.21,100.853,66.8216,99.5796,141.59,219.311,303.785,405.224,216.646]}},"id":"69ffd2b0-04be-41d0-8302-cdf3616dae4b","type":"ColumnDataSource"},{"attributes":{"dimension":1,"plot":{"id":"121eb271-177d-432d-b2ac-10ba384a0c9e","subtype":"Figure","type":"Plot"},"ticker":{"id":"1113501c-f4d5-43aa-b476-42920abc6da3","type":"BasicTicker"}},"id":"7c6cd17f-1379-41e0-8397-d7342e157a02","type":"Grid"},{"attributes":{},"id":"1b1b38eb-90c1-46bf-8b2a-e9b96b3d2d77","type":"SaveTool"},{"attributes":{"data_source":{"id":"69ffd2b0-04be-41d0-8302-cdf3616dae4b","type":"ColumnDataSource"},"glyph":{"id":"4262f97d-007d-4a0d-8297-c1b08bea493c","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"28a49b3e-e406-42bb-b26f-c0f586534e3e","type":"Line"},"selection_glyph":null,"view":{"id":"b23cdfa0-cb81-4a2a-b86f-578b6bd75b18","type":"CDSView"}},"id":"f209c92b-f87a-4b94-a5c4-61e1ea04d61b","type":"GlyphRenderer"},{"attributes":{},"id":"bae321b1-f5f3-4459-89dd-b7dd9f3f49bc","type":"LinearScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"7b7a330b-c7a7-4b79-92c7-0e7742bf6332","type":"PanTool"},{"id":"63a26f70-1bf4-4c7a-8f41-e183fa0d6169","type":"WheelZoomTool"},{"id":"dc383686-c7bf-4b80-a2f5-4e9d730a26b3","type":"BoxZoomTool"},{"id":"1b1b38eb-90c1-46bf-8b2a-e9b96b3d2d77","type":"SaveTool"},{"id":"6a6f0a00-713e-4237-a137-a5f74901ebd9","type":"ResetTool"},{"id":"1bc7aada-7a38-4136-9def-b65ea9f43694","type":"HelpTool"}]},"id":"02089155-4578-448f-91ca-34bb984aaedb","type":"Toolbar"},{"attributes":{"axis_label":"\u0db8\u0dcf\u0dc3\u0dba","formatter":{"id":"d49d6391-e6cb-4d36-aca8-8e91a6e34a4a","type":"BasicTickFormatter"},"plot":{"id":"121eb271-177d-432d-b2ac-10ba384a0c9e","subtype":"Figure","type":"Plot"},"ticker":{"id":"ef31acdb-7d17-43dc-b3f1-0fbab04dec9b","type":"BasicTicker"}},"id":"98edd859-d16d-4303-aca7-068fca758b98","type":"LinearAxis"},{"attributes":{"plot":null,"text":"2015 \u0dc0\u0dc3\u0dbb\u0dda \u0db8\u0dcf\u0dc3\u0dd2\u0d9a \u0dc0\u0dbb\u0dca\u0dc2\u0dcf\u0db4\u0dad\u0db1\u0dba"},"id":"c3cc54e1-1d46-4e71-b9bb-7faf69227562","type":"Title"},{"attributes":{"plot":{"id":"121eb271-177d-432d-b2ac-10ba384a0c9e","subtype":"Figure","type":"Plot"},"ticker":{"id":"ef31acdb-7d17-43dc-b3f1-0fbab04dec9b","type":"BasicTicker"}},"id":"5dd54b3c-7418-42a2-92d4-9a2a946b907e","type":"Grid"},{"attributes":{"callback":null},"id":"85694579-5552-4d84-99dc-e5beef5f7eb7","type":"DataRange1d"},{"attributes":{},"id":"72a22519-b3af-4f8d-983b-f5b00b4d26ae","type":"BasicTickFormatter"},{"attributes":{"axis_label":"\u0dc0\u0dbb\u0dca\u0dc2\u0dcf\u0db4\u0dad\u0db1\u0dba (mm)","formatter":{"id":"72a22519-b3af-4f8d-983b-f5b00b4d26ae","type":"BasicTickFormatter"},"plot":{"id":"121eb271-177d-432d-b2ac-10ba384a0c9e","subtype":"Figure","type":"Plot"},"ticker":{"id":"1113501c-f4d5-43aa-b476-42920abc6da3","type":"BasicTicker"}},"id":"7d2088d5-8287-45ec-abef-472c805bf63c","type":"LinearAxis"},{"attributes":{},"id":"7b7a330b-c7a7-4b79-92c7-0e7742bf6332","type":"PanTool"},{"attributes":{"below":[{"id":"98edd859-d16d-4303-aca7-068fca758b98","type":"LinearAxis"}],"left":[{"id":"7d2088d5-8287-45ec-abef-472c805bf63c","type":"LinearAxis"}],"renderers":[{"id":"98edd859-d16d-4303-aca7-068fca758b98","type":"LinearAxis"},{"id":"5dd54b3c-7418-42a2-92d4-9a2a946b907e","type":"Grid"},{"id":"7d2088d5-8287-45ec-abef-472c805bf63c","type":"LinearAxis"},{"id":"7c6cd17f-1379-41e0-8397-d7342e157a02","type":"Grid"},{"id":"ece31ccf-231f-4084-b713-cc37c5fbbd49","type":"BoxAnnotation"},{"id":"f209c92b-f87a-4b94-a5c4-61e1ea04d61b","type":"GlyphRenderer"}],"title":{"id":"c3cc54e1-1d46-4e71-b9bb-7faf69227562","type":"Title"},"toolbar":{"id":"02089155-4578-448f-91ca-34bb984aaedb","type":"Toolbar"},"x_range":{"id":"85694579-5552-4d84-99dc-e5beef5f7eb7","type":"DataRange1d"},"x_scale":{"id":"0a375b2a-a8af-42b7-942b-b6916343dc3f","type":"LinearScale"},"y_range":{"id":"65e384c4-3bcc-4317-b3e9-51a8f232f64c","type":"DataRange1d"},"y_scale":{"id":"bae321b1-f5f3-4459-89dd-b7dd9f3f49bc","type":"LinearScale"}},"id":"121eb271-177d-432d-b2ac-10ba384a0c9e","subtype":"Figure","type":"Plot"},{"attributes":{"source":{"id":"69ffd2b0-04be-41d0-8302-cdf3616dae4b","type":"ColumnDataSource"}},"id":"b23cdfa0-cb81-4a2a-b86f-578b6bd75b18","type":"CDSView"},{"attributes":{},"id":"6a6f0a00-713e-4237-a137-a5f74901ebd9","type":"ResetTool"},{"attributes":{"callback":null},"id":"65e384c4-3bcc-4317-b3e9-51a8f232f64c","type":"DataRange1d"},{"attributes":{},"id":"1113501c-f4d5-43aa-b476-42920abc6da3","type":"BasicTicker"},{"attributes":{"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"line_width":{"value":2},"x":{"field":"x"},"y":{"field":"y"}},"id":"28a49b3e-e406-42bb-b26f-c0f586534e3e","type":"Line"},{"attributes":{},"id":"d49d6391-e6cb-4d36-aca8-8e91a6e34a4a","type":"BasicTickFormatter"},{"attributes":{},"id":"63a26f70-1bf4-4c7a-8f41-e183fa0d6169","type":"WheelZoomTool"},{"attributes":{},"id":"ef31acdb-7d17-43dc-b3f1-0fbab04dec9b","type":"BasicTicker"},{"attributes":{"line_color":{"value":"#1f77b4"},"line_width":{"value":2},"x":{"field":"x"},"y":{"field":"y"}},"id":"4262f97d-007d-4a0d-8297-c1b08bea493c","type":"Line"}],"root_ids":["121eb271-177d-432d-b2ac-10ba384a0c9e"]},"title":"Bokeh Application","version":"0.12.7"}};
+            var render_items = [{"docid":"cf85e9f0-f129-42c0-99dc-c14e0f0de3a0","elementid":"50c44a66-9dd1-4d20-9a6d-2a21657247a3","modelid":"121eb271-177d-432d-b2ac-10ba384a0c9e"}];
+            
+            Bokeh.embed.embed_items(docs_json, render_items);
+          };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+        })();
+      },
+      function(Bokeh) {
+      }
+    ];
+  
+    function run_inline_js() {
+      
+      if ((root.Bokeh !== undefined) || (force === true)) {
+        for (var i = 0; i < inline_js.length; i++) {
+          inline_js[i].call(root, root.Bokeh);
+        }if (force === true) {
+          display_loaded();
+        }} else if (Date.now() < root._bokeh_timeout) {
+        setTimeout(run_inline_js, 100);
+      } else if (!root._bokeh_failed_load) {
+        console.log("Bokeh: BokehJS failed to load within specified timeout.");
+        root._bokeh_failed_load = true;
+      } else if (force !== true) {
+        var cell = $(document.getElementById("50c44a66-9dd1-4d20-9a6d-2a21657247a3")).parents('.cell').data().cell;
+        cell.output_area.append_execute_result(NB_LOAD_WARNING)
+      }
+  
+    }
+  
+    if (root._bokeh_is_loading === 0) {
+      console.log("Bokeh: BokehJS loaded, going straight to plotting");
+      run_inline_js();
+    } else {
+      load_libs(js_urls, function() {
+        console.log("Bokeh: BokehJS plotting callback run at", now());
+        run_inline_js();
+      });
+    }
+  }(window));
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="/tag/python.html" class="tag">python</a>
+            </div>
+        </div>
+    </article>
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+    </body>
+</html>
