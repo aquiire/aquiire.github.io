@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Aquire - Aquire</title><link>/</link><description></description><lastBuildDate>Fri, 22 Sep 2017 21:47:00 +0000</lastBuildDate><item><title>I eye I</title><link>/notebooks/i-eye-i.html</link><description>
+<rss version="2.0"><channel><title>Aquire - Aquire</title><link>/</link><description></description><lastBuildDate>Sun, 25 Feb 2018 21:31:00 +0000</lastBuildDate><item><title>ඒකමාන සරල ගැටුම් සමාකරක</title><link>/notebooks/eekmaan-srl-gaettum-smaakrk.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="ඒකමාන-සරල-ගැටුම්-සමාකරකය"&gt;&amp;#3474;&amp;#3482;&amp;#3512;&amp;#3535;&amp;#3505; &amp;#3523;&amp;#3515;&amp;#3517; &amp;#3484;&amp;#3536;&amp;#3495;&amp;#3540;&amp;#3512;&amp;#3530; &amp;#3523;&amp;#3512;&amp;#3535;&amp;#3482;&amp;#3515;&amp;#3482;&amp;#3514;&lt;a class="anchor-link" href="#ඒකමාන-සරල-ගැටුම්-සමාකරකය"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;වස්තුවක් තලයක් මත ගැටුමෙන් පසු පෘෂ්ඨයෙන් ඉවතට චලනය වීම පොලා පැනීමයි. ගැටුමකින් පසු පොලා පැනීමක් සිදු වේ නම් එය ප්‍රත්‍යස්ථ ගැටුමකි.
+සර්වසම රබර් බෝලයක් හා වීදුරු බෝලයක් මෙලෙස පොලා පනින අවස්ථාවක් සලකමු. සමාන උසක සිට ඒවා අත හැරිය විට ගැටුමට මොහොතකට පෙර 2හිම ප්‍රවේග සමාන වේ. එ නමුත් ගෝල දෙක ඉහළ නගිනුයේ වෙනස් උසවල්ය. ඒ බෝලවල ගැටුමට පසු ප්‍රවේග වෙනස් නිසාය.
+පොලා පැනීම හා ප්‍රවේග වස්තු සෑදී ඇති ද්‍රව්‍ය මත මෙන්ම ගැටෙන පෘෂඨයේ ස්වභාව මතද රඳා පවතියි. ප්‍රත්‍යස්ථ වස්තු 2ක් ගැටෙන විට ස්පර්ෂ තලයට ලම්බකව ස්පර්ෂ ලක්ෂ්‍යය ඔස්සේ පිහිටි රේඛාව &lt;em&gt;ගැටුම් රේඛාව&lt;/em&gt; ලෙස හැඳින්වේ. 
+ගැටුමට බඳුන් වන වස්තු 2හි ස්කත්ධ කේන්ද්‍ර මෙ⁣ම රේඛාව ඔස්සේ පිහිටියේ යයි ගනිමු. ගැටුමට මොහොතකට පෙර අංශු 2හි ප්‍රවේග ගැටුම් රේඛාව ඔස්සේ පවතියි නම්, එම ගැටුම සරල ගැටුමක් ලෙස අර්ථ ගැන්වේ.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img src="collision2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;රේඛීය ගම්‍යතා සංස්ථිති මූලධර්මයෙන්,&lt;/p&gt;
+&lt;p&gt;$m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2\tag{1}$&lt;/p&gt;
+&lt;p&gt;නිව්ටන් ප්‍රත්‍යාගති මූලධර්මයෙන්,&lt;/p&gt;
+&lt;p&gt;$u_2 - u_1 = e(v_1 - v_2)\tag{2}$&lt;/p&gt;
+&lt;p&gt;$(2)\times m_1$ න්,&lt;/p&gt;
+&lt;p&gt;$m_1 u_2 - m_1 u_1 = e m_1 (v_1 - v_2)\tag{3}$&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Aquire</dc:creator><pubDate>Sun, 25 Feb 2018 21:31:00 +0000</pubDate><guid isPermaLink="false">tag:None,2018-02-25:/notebooks/eekmaan-srl-gaettum-smaakrk.html</guid><category>python</category><category>physics</category></item><item><title>I eye I</title><link>/notebooks/i-eye-i.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
