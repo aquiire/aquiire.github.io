@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Aquire - Aquire</title><link>/</link><description></description><lastBuildDate>Fri, 22 Sep 2017 21:47:00 +0000</lastBuildDate><item><title>I eye I</title><link>/notebooks/i-eye-i.html</link><description>
+<rss version="2.0"><channel><title>Aquire - Aquire</title><link>/</link><description></description><lastBuildDate>Tue, 20 Mar 2018 18:37:00 +0000</lastBuildDate><item><title>ආ...වර්ජනය</title><link>/notebooks/aavrjny.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;හුදෙක් උසස් පෙළ නොස්ටැල්ජියානු මතකය ආවර්ජනය කිරීම උදෙසා....&lt;/p&gt;
+&lt;p&gt;උපුටා ගැනීම, වී. ජෝසප් හා කේ. පී. ඩී. ධර්මදාස විසින් සම්පාදිත &lt;em&gt;ගතිකය&lt;/em&gt; කෘතියේ 3.35 අභ්‍යාසය.&lt;/p&gt;
+&lt;h2 id="ගැටළුව"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Aquire</dc:creator><pubDate>Tue, 20 Mar 2018 18:37:00 +0000</pubDate><guid isPermaLink="false">tag:None,2018-03-20:/notebooks/aavrjny.html</guid><category>maths</category></item><item><title>I eye I</title><link>/notebooks/i-eye-i.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -106,5 +113,14 @@ $$\tau(n) = \sum_{d|n} 1$$&lt;/p&gt;
 &lt;p&gt;Now we have considered 2 bins.&lt;/p&gt;
 &lt;p&gt;Then we can think where would $2b$ go. It can't go to $A_0$ because before $ab$ we can't find a multiply of $b$ that can be divided by $a$ (We are only considering $b,2b,3b,\ldots$). $2b$ can't go to bin $A_{b\bmod a}$ either.&lt;/p&gt;
 &lt;p&gt;let $b=aq_1+r_1$ [1] where $q_1$ and $r_1$ are the quotient and remainder ($b\bmod a$).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Aquire</dc:creator><pubDate>Mon, 07 Aug 2017 17:42:00 +0000</pubDate><guid isPermaLink="false">tag:None,2017-08-07:/notebooks/chicken-mcnuggets.html</guid><category>maths</category></item><item><title>Optimum Reception</title><link>/notebooks/optimum-reception.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;When we transmit a signal it gets distorted due to different reasons. So there should be a method to identify the transmitted signal at the reciever end. In this article we simulate identifying a randomly generated binary signal sequence which is corrupted by Additive White Gaussian Noise (AWGN) using a simple decision rule and demonstrate how Bit Error Rate (BER) and $ Q\left(\sqrt{\frac{E_s}{N_0}}\right)$ varies with $ \frac{E_s}{N_0}$ value. Furthermore we investigate the relationship between BER and $ Q\left(\sqrt{\frac{E_s}{N_0}}\right)$.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Aquire</dc:creator><pubDate>Mon, 05 Jun 2017 09:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2017-06-05:/notebooks/optimum-reception.html</guid><category>digital-communications</category><category>probability</category></item></channel></rss>
