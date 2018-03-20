@@ -1049,6 +1049,16 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;පළමුව $P$ ප්‍රිස්මය හැර යන බවත් ඒ තාක් ප්‍රිස්මය නිසලව පවතින බවත් සමාකරණය තහවුරු කරයි. අවසන සංරචක සියල්ල ඒකාකාරී ප්‍රවේගයන්ගෙන් චලනය වේ. අංශු දැක්වීම ප්‍රායෝගික නොවන බැවින් $P$ හා $Q$ නිරූපණය ට වෘත්ත යොදා ගැනිණ. (එම ආසන්න කිරීම කෙතරම් සාධාරණ ද?)&lt;/p&gt;
+&lt;p&gt;විශේෂ ස්තුතිය: UNASA (වි.වි.අ.කා.ම.)&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
  
 
 
@@ -16411,10 +16421,10 @@ h6:hover .anchor-link {
 
 
 
-&lt;div id="0a64a7c2-5464-4b52-818b-997e22ebae41"&gt;&lt;/div&gt;
+&lt;div id="08e79ed1-464c-4163-b208-a9372090a9c4"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#0a64a7c2-5464-4b52-818b-997e22ebae41');
+var element = $('#08e79ed1-464c-4163-b208-a9372090a9c4');
 
 (function(root) {
   function now() {
