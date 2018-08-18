@@ -1,5 +1,1047 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Aquire</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-03-20T18:37:00+00:00</updated><entry><title>ආ...වර්ජනය</title><link href="/notebooks/aavrjny.html" rel="alternate"></link><published>2018-03-20T18:37:00+00:00</published><updated>2018-03-20T18:37:00+00:00</updated><author><name>Aquire</name></author><id>tag:None,2018-03-20:/notebooks/aavrjny.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Aquire</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-08-18T18:18:00+00:00</updated><entry><title>විද්‍යායිකයෙකුට පිළිතුරක්</title><link href="/notebooks/vidyaayikyekutt-pilliturk.html" rel="alternate"></link><published>2018-08-18T18:18:00+00:00</published><updated>2018-08-18T18:18:00+00:00</updated><author><name>Aquire</name></author><id>tag:None,2018-08-18:/notebooks/vidyaayikyekutt-pilliturk.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;සමහරු කියන්නේ දෙවිවරු කෙරෙහි විස්වාසය පවත්වා ගැනීම පල රහිත බවත් ඊට වඩා ලෝකයේ බහුතරය පිළිගන්න විද්‍යාව මත පදනම් වීම උචිත බවත්. එක්තරා විදිහට කෙනෙක්ට කියන්න පුළුවන් ඔබ විද්‍යාව විස්වාස කරන කෙනෙක් කියලා. ඒකට එරෙහිව බොහෝ දෙනෙක් දෙන උත්තරේ තමයි විද්‍යාව ශක්නිමත් පදනමක පිහිටලා තියන විෂයයක් ය කියන එක. සරලම උදාහරණයක් විදියට මිනිස්සු මේ ශිෂ්ටාචාරයේ අවිවාදයෙන්ම උච්චස්ථානයට ඇවිල්ලා තියෙන්නේ කොටින්ම මේ විද්‍යාව තාක්ෂණය නිසා බව. හැබැයි එහෙම හිතන මිනිස්සු ඒ වෙලාවට අමතක කරන දෙයක් තමා විද්‍යාව නිසා ඇති වෙලා තියෙන අනිටු පල විපාක. බුද්ධිමත් කෙනෙක් විදිහට ඔබ ඒ විපාක ගැන දන්නා බව මා සිතනවා. එතකොට කෙනෙක්ට කියන්න පුළුවං නෑ දැං ලෝකය විද්‍යාත්මක ව ම මේ අනිටු පලවල ට එරෙහි ව ක්‍රියාමාර්ග ගන්න පටං අරං තියෙන්නේ කියලා. (ලෝකයේ විද්‍යා තාක්ෂණයේ පෙරගමන්කරු විදිහට කවුරුත් විස්වාස කරන අමෙරිකාව දැනට එක්සත් ජාතීන්ගේ සංවිධානය විසින් ගෙනා කිසිම පරිසර ගිවිසුමකට අත්සන් නොතැබීම පැත්තකින් තිව්වොත් ) ලෝකයා දැන් තිරසාර සංවර්ධනය, පුනර්ජනනීය ශක්ති ප්‍රභව, කාබනික පොහොර ඈ එකී මෙකී ක්‍රියාමාර්ග කෙරෙහි කෙමෙන් අවධානය යොමු කරන බවත් ඒ සඳහා විද්‍යාත්මක දෘෂ්ටියක් යොමන බවත්. ඒ ගැන අපි සතුටු වෙන්න ඕන. ඒ වුණත් ඒ ක්‍රියාමාර්ග හුදෙක් පැලැස්තර පමණක් වීමේ සම්භාවිතාව වැඩියි මයෙ හිතේ.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;සමහරු කියන්නේ දෙවිවරු කෙරෙහි විස්වාසය පවත්වා ගැනීම පල රහිත බවත් ඊට වඩා ලෝකයේ බහුතරය පිළිගන්න විද්‍යාව මත පදනම් වීම උචිත බවත්. එක්තරා විදිහට කෙනෙක්ට කියන්න පුළුවන් ඔබ විද්‍යාව විස්වාස කරන කෙනෙක් කියලා. ඒකට එරෙහිව බොහෝ දෙනෙක් දෙන උත්තරේ තමයි විද්‍යාව ශක්නිමත් පදනමක පිහිටලා තියන විෂයයක් ය කියන එක. සරලම උදාහරණයක් විදියට මිනිස්සු මේ ශිෂ්ටාචාරයේ අවිවාදයෙන්ම උච්චස්ථානයට ඇවිල්ලා තියෙන්නේ කොටින්ම මේ විද්‍යාව තාක්ෂණය නිසා බව. හැබැයි එහෙම හිතන මිනිස්සු ඒ වෙලාවට අමතක කරන දෙයක් තමා විද්‍යාව නිසා ඇති වෙලා තියෙන අනිටු පල විපාක. බුද්ධිමත් කෙනෙක් විදිහට ඔබ ඒ විපාක ගැන දන්නා බව මා සිතනවා. එතකොට කෙනෙක්ට කියන්න පුළුවං නෑ දැං ලෝකය විද්‍යාත්මක ව ම මේ අනිටු පලවල ට එරෙහි ව ක්‍රියාමාර්ග ගන්න පටං අරං තියෙන්නේ කියලා. (ලෝකයේ විද්‍යා තාක්ෂණයේ පෙරගමන්කරු විදිහට කවුරුත් විස්වාස කරන අමෙරිකාව දැනට එක්සත් ජාතීන්ගේ සංවිධානය විසින් ගෙනා කිසිම පරිසර ගිවිසුමකට අත්සන් නොතැබීම පැත්තකින් තිව්වොත් ) ලෝකයා දැන් තිරසාර සංවර්ධනය, පුනර්ජනනීය ශක්ති ප්‍රභව, කාබනික පොහොර ඈ එකී මෙකී ක්‍රියාමාර්ග කෙරෙහි කෙමෙන් අවධානය යොමු කරන බවත් ඒ සඳහා විද්‍යාත්මක දෘෂ්ටියක් යොමන බවත්. ඒ ගැන අපි සතුටු වෙන්න ඕන. ඒ වුණත් ඒ ක්‍රියාමාර්ග හුදෙක් පැලැස්තර පමණක් වීමේ සම්භාවිතාව වැඩියි මයෙ හිතේ.&lt;/p&gt;
+&lt;p&gt;දැං නූතන විද්‍යාව පොඩ්ඩක් අමතක කරලා ඒ කාලෙ ලංකාව ගැන හිතුවොත් අද ඉතුරු වෙලා තියන ඉඳිකිරීම් විදියට දකින්න පුළුවං වෙලා තියෙන්නේ වැව් අමුණු දාගැබ් විතරයි. මිනිස්සුන්ගෙ ගෙවල් දොරවල් රජ මාළිඟාවලට මොකෑ උණේ කියලා අපට ප්‍රශ්නයක් මතු වෙනවා. ඊට වඩා ඇති වෙන ලොකු ම ගැටළුව තමා මේ මහ වැව් දාගැබ් හැදුවෙ කවුද කියන එක. ඒවා ට මොනවගේ විද්‍යාවක් තාක්ෂණයක් පාවිච්චි කළා ද කියන එක. අද අපි උතුම් කොට සලකන නිව්ටන්, අයින්ස්ටයින් වාගේ බිසෝකොටුව පිළිබඳ ගැමුණු නියමය (බස් ගැමුණු නොවේ ;-) ), චූඩාමානික්‍ය පිළිබඳ තිස්ස න්‍යාය වාගේ ඒවා නැත්තේ ඇයි කියන එක. පැරණි ග්‍රීක, බැබිලෝනීය, චීන, හින්දු ඈ ශිෂ්ටාචාරයන්ට සාපේක්ෂව විද්‍යා ගණිත ඓතිහාසික මූලාශ්‍ර ලංකාවේ හොයාගන්නත් නැති තරම්. එහෙම වුණත් ඒකාලෙ විද්‍යාව තාක්ෂණය අඩුම ගාණෙ නූතන මුහුණුවරට වඩා වෙනස් මුහුණුවරකින් හෝ තියෙන්න ඕන කියලා අපට විස්වාස කරන්න වෙනව.&lt;/p&gt;
+&lt;p&gt;සාහිත්‍යමය මූලාශ්‍රයන්ගෙන් විද්‍යාව හා බැඳුණු මූලාශ්‍ර ප්‍රතිශතය ගැන කල්පනා කළාම "විද්‍යාව" ලේඛනගත කරන්න දක්වපු උනන්දුව අඩුදත් කියලා හිතෙනවා. සමහරවිට අංගම්පොර වාගේ මේ දාගැබ් හදන විධි ක්‍රම පාරම්පරික රහස් විදිහට තියාගෙන ඉඳියද දන්නෙත් නෑ. හැබැයි සාමාන්‍ය මිනිහෙක් වුණු (මං හිතන විදිහට) බුලතත් වැවක් හදපු එකේ එහෙම නොවෙන්නත් පුළුවං. උමා ඔය වාගේ ව්‍යාපෘති අසාර්ථක වෙද්දි, යෝධ ඇළේ නැම්ම, සීගිරියේ ජල පද්ධතිය, දාගැබ් එකකටවත් දන්න ඉතියාසයකදි අකුණු නොගහපු එක වාගේ එව්ව කොහොම උණා ද කියන එක අදටත් ප්‍රශ්නයක්.&lt;/p&gt;
+&lt;p&gt;හරි දැං එ් "කන්න බැරි ඉතිහාස" පම්පෝරිය නවත්තල වර්තමානෙට එමු. මහන්සියටත් එක්ක සරල ගාණක් බලමු.&lt;/p&gt;
+&lt;p&gt;ඕනම ධන පූර්ණ සංඛ්‍යාවක් ගන්න. ඒක ඔත්තේ නං තුනෙන් ගුණ කරල එකක් එකතු කරන්න; ඉරට්ටේ නම් දෙකෙන් බෙදන්න.
+දැං දෙකෙන් එකක් කරල ආපු සංඛ්‍යාවට ආයි ඒ වැඩේ ම කරන්න.
+...
+ඔය විදිහට දිගටම කරං යන්න. අද ලෝකෙ ඉන්න හෑම ගණිතඥයෙක්ම විස්වාස කරන දෙයක් තමා ඔහොම දිගටම කරං ගියාම අන්තිමට 1 එන බව. අවුරුදු ගාණක් මේ ප්‍රශ්නෙ තිබ්බත් මේ බව තවම සාධනය කර ගන්න බැරි වෙලා තියනවා. හැබැයි මෙතෙක් පරික්ෂා කරපු හෑම ගණින සංඛ්‍යාවකටම මේ කතාව වැරැදිලා නම් නෑ..&lt;/p&gt;
+&lt;p&gt;අපි විද්‍යාව හෝ විද්‍යාව පදනම් වෙලා තියෙන ගණිතය මත කොතරම් විස්වාසය තියං උන්නත්, මේ වාගේ සරල ප්‍රශ්නයක් පවා සාධනය කරන්න දැං පවතින ගණිතය අසමත්. ගණිතය පදනම් වෙලා තියෙන තර්ක පද්ධතියෙත් ගැටළු තියෙනව.&lt;/p&gt;
+&lt;p&gt;උදාහරණයක්:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A මිනිසෙකි.&lt;/li&gt;
+&lt;li&gt;හෑම මිනිහෙක් ට ම හදවතක් ඇත.&lt;/li&gt;
+&lt;li&gt;1 හා 2 අනුව Aට හදවතක් ඇත.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1 ප්‍රකාශයයි 2 ප්‍රකාශයි අතර කිසිම සම්බන්ධයක් නෑ කියල හිතුවොත් 3 හරියි කියල හිතෙනව. හැබැයි A මිනිසෙක් කියන ප්‍රකාශය ඇතුළෙම Aට හදවතක් ඇත කියන කරුණ තියනව. හදවතක් නැත්තං A මිනිහෙක් වෙන්න බෑනෙ.&lt;/p&gt;
+&lt;p&gt;මේක ප්‍රශ්නයක්. හැබැයි මේක ප්‍රශ්නයක් නොවේ ය කියල හිතල තමයි අද සම්පූර්ණ විද්‍යාව ම මේ තත්ත්වය ට ඇවිල්ල තියෙන්නෙ.&lt;/p&gt;
+&lt;p&gt;අඳුරු පදාර්ථය, අඳුරු ශක්නිය වාගේ සංකල්ප ගොඩනඟන්න හේතු උණේ මන්දාකිණි චලිතය, විශ්වයේ ප්‍රසාරණය වාගේ දේවල් හරියට පැහැදිළි කර ගැනීමට බැරි වූ නිසා. දැං විශ්වයෙන් 90% කට වඩා බාර දීල තියෙන්නේ මේ දෙකට (27% + 68% ආසන්නව). අඳුරු කියන වචනෙ පාවිච්චි කරල තියෙන්නේ විද්‍යාඥයන්ට මේ පදාර්ථ, ශක්ති ගැන හරි අවබෝධයක් තවම නැති නිසායි.&lt;/p&gt;
+&lt;p&gt;මක්ස් ප්ලාංක්ගෙ ගුරුතුමෙක් වරක් ඔහුට පැවසුව සෛද්ධාන්තික භෞතික විද්‍යාවෙ හොයාගන්න තියෙන හැම දෙයක්ම හොයාගෙන ඉවරයි කියල. මක්ස් ප්ලාංක් තමා භෞතික විද්‍යාව උඩු යටිකුරු කරමින් ක්වොන්ටම් වාදය ඉදිරිපත් කළේ.&lt;/p&gt;
+&lt;p&gt;කෙනෙක් කියයි විද්‍යාව කොහොමත් දියුණු වෙනව. පරණ මූලධර්ම සංශෝධනය වෙනව. අප ඇත්තට ටිකෙන් ටික ළං වෙනව. ඒකෙ මොකද්ද වැරැද්ද කියලා.&lt;/p&gt;
+&lt;p&gt;ඔව්, ඒක ඇත්ත. කොටින්ම විද්‍යාවක් දියුණු උන්නැතනං මෙහෙම කොට කොට බයිල ගහන්න වෙන්නෙත් නෑ... ( 🤔 ) හැබැයි දැන් තියන විද්‍යාව දෙවියෙක් ඉන්නව ද නැත් ද කියන තීරණේට විද්‍යාත්මක ව එළඹෙන්න කොච්චර ප්‍රමාණවත් ද කියන ප්‍රශ්නෙ ට උත්තරේ කොච්චර විස්වාසෙකින් දෙන්න පුළුවං ද කියන එක තමා පුරස්නෙ. ඒ විස්වාසෙ මක්ස්ගේ ගුරුතුමාගේ විස්වාසෙ වාගේ විස්වාසයක් වීමේ සම්භාවිතාව ගොඩක් වැඩියි මං හිතන්නෙ.&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href="https://drive.google.com/open?id=1VbPjvWzeou73FQgMVak985HUtp65ymUk"&gt;ලංකාවෙ ඒකාලේ "විද්‍යාව" ඈ ගැන පොඩි විස්තරයක්&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href="https://drive.google.com/open?id=1A3kcaEXMLhjMFN5oQOdHidjDozYJ6AaY"&gt;ලංකාවේ ඓතිහාසික මූලාශ්‍ර ගැන කෙටි සටහනක්&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href="http://mathworld.wolfram.com/CollatzProblem.html"&gt;ගණිත ගැටළුව ගැන&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] &lt;a href="https://plato.stanford.edu/entries/russell-paradox/"&gt;තර්කන පද්ධතියේ පැවැති ගැටළුවක්&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5] &lt;a href="https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy"&gt;අඳුරු පදාර්ථය, අඳුරු ශක්තිය ගැන&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[6] &lt;a href="https://hsm.stackexchange.com/questions/2129/who-said-that-essentially-everything-in-theoretical-physics-had-already-been-dis"&gt;මක්ස් ප්ලාංක්ගේ කතාව&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</content><category term="maths"></category><category term="science"></category><category term="gods"></category><category term="atheism"></category></entry><entry><title>ආ...වර්ජනය</title><link href="/notebooks/aavrjny.html" rel="alternate"></link><published>2018-03-20T18:37:00+00:00</published><updated>2018-03-20T18:37:00+00:00</updated><author><name>Aquire</name></author><id>tag:None,2018-03-20:/notebooks/aavrjny.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -16421,10 +17463,10 @@ h6:hover .anchor-link {
 
 
 
-&lt;div id="08e79ed1-464c-4163-b208-a9372090a9c4"&gt;&lt;/div&gt;
+&lt;div id="11552c86-971e-44e7-a273-3f502a5c8214"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#08e79ed1-464c-4163-b208-a9372090a9c4');
+var element = $('#11552c86-971e-44e7-a273-3f502a5c8214');
 
 (function(root) {
   function now() {
