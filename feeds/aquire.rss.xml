@@ -61,7 +61,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Python යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt; යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:&lt;/p&gt;
 &lt;ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Aquire</dc:creator><pubDate>Fri, 01 Sep 2017 08:31:00 +0000</pubDate><guid isPermaLink="false">tag:None,2017-09-01:/notebooks/python-bhaavityen-prstaar-andinnee-kohomd.html</guid><category>python</category></item><item><title>පහසු ගෙවීමේ ක්‍රමය</title><link>/notebooks/phsu-geviimee-krmy.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;

@@ -18159,7 +18159,7 @@ Xf8Yyj4AAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Python යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt; යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:&lt;/p&gt;
 &lt;ul&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -19136,7 +19136,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Python යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Python&lt;/code&gt; යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://matplotlib.org"&gt;Matplotlib&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://seaborn.pydata.org"&gt;Seaborn&lt;/a&gt;&lt;/li&gt;
@@ -19210,10 +19210,10 @@ h6:hover .anchor-link {
 
 
 
-&lt;div id="ef4d3d82-dc15-47f9-993a-5033471031fc"&gt;&lt;/div&gt;
+&lt;div id="d8dfe2a8-8f93-4a37-b67f-f9b1714ded33"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#ef4d3d82-dc15-47f9-993a-5033471031fc');
+var element = $('#d8dfe2a8-8f93-4a37-b67f-f9b1714ded33');
 
 (function(root) {
   function now() {
