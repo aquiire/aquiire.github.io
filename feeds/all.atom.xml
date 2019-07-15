@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Aquire</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-10-25T21:00:00+00:00</updated><entry><title>Bit Soccer</title><link href="/notebooks/bit-soccer.html" rel="alternate"></link><published>2018-10-25T21:00:00+00:00</published><updated>2018-10-25T21:00:00+00:00</updated><author><name>Aquire</name></author><id>tag:None,2018-10-25:/notebooks/bit-soccer.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Aquire</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-07-15T23:10:00+00:00</updated><entry><title>රාවණ ගේ අරුමැසි යතුරු</title><link href="/notebooks/raavnn-gee-arumaesi-yturu.html" rel="alternate"></link><published>2019-07-15T23:10:00+00:00</published><updated>2019-07-15T23:10:00+00:00</updated><author><name>Aquire</name></author><id>tag:None,2019-07-15:/notebooks/raavnn-gee-arumaesi-yturu.html</id><summary type="html">&lt;p&gt;අසා ඇත රාවණා ගැන
+ගියේල උඩින් ඌ
+ලිවීල පොත්
+විමාන සංග්‍රහය ඈ&lt;/p&gt;
+&lt;p&gt;කෙනෙක් මුමුණයි
+ප්‍රවාද  යැ ඕවා
+හුදෙක්
+මැවූ හිතළුම&lt;br&gt;
+මිස නොවේ අනිකක්&lt;/p&gt;
+&lt;p&gt;පොතුහැර විමසමු
+සිතමු එකලැ
+තිබිණි මෙවන්මැ
+යුගයක්
+විමසන හැම
+දේ පොතුහැර&lt;/p&gt;
+&lt;p&gt;මේ දෑ එ සමේ
+වෙන්නට බැරියැයි
+උඩඟුවැ
+දොඩන්නේ කිම්&lt;/p&gt;
+&lt;p&gt;අරුමැසි යතුරු
+නිමවන්නට
+බැරි ද ඒ කලැ
+වාලුකා නොතිබිණැයි
+ඒ කල 
+දෙස් දෙන්ට
+පිළිවන් දැ එවුන්ට&lt;/p&gt;
+&lt;p&gt;තවත් ශත සහස් වස් යත්ම
+අයින්ස්ටයිනුවානන්
+දෙවියෙකැයි
+නොවඳිතැය …&lt;/p&gt;</summary><content type="html">&lt;p&gt;අසා ඇත රාවණා ගැන
+ගියේල උඩින් ඌ
+ලිවීල පොත්
+විමාන සංග්‍රහය ඈ&lt;/p&gt;
+&lt;p&gt;කෙනෙක් මුමුණයි
+ප්‍රවාද  යැ ඕවා
+හුදෙක්
+මැවූ හිතළුම&lt;br&gt;
+මිස නොවේ අනිකක්&lt;/p&gt;
+&lt;p&gt;පොතුහැර විමසමු
+සිතමු එකලැ
+තිබිණි මෙවන්මැ
+යුගයක්
+විමසන හැම
+දේ පොතුහැර&lt;/p&gt;
+&lt;p&gt;මේ දෑ එ සමේ
+වෙන්නට බැරියැයි
+උඩඟුවැ
+දොඩන්නේ කිම්&lt;/p&gt;
+&lt;p&gt;අරුමැසි යතුරු
+නිමවන්නට
+බැරි ද ඒ කලැ
+වාලුකා නොතිබිණැයි
+ඒ කල 
+දෙස් දෙන්ට
+පිළිවන් දැ එවුන්ට&lt;/p&gt;
+&lt;p&gt;තවත් ශත සහස් වස් යත්ම
+අයින්ස්ටයිනුවානන්
+දෙවියෙකැයි
+නොවඳිතැයි
+දෙස් දෙන්ට
+පිළිවන් දැ එවුන්ට&lt;/p&gt;
+&lt;p&gt;සසර සකැ මේ යැයි
+බුදුනුවෝ දෙසුවේ
+වෙනකක් ම නොව
+මේ නොවේමැයි
+දෙස් දෙන්ට
+පිළිවන් දැ එවුන්ට&lt;/p&gt;</content><category term="poem"></category><category term="history"></category></entry><entry><title>Bit Soccer</title><link href="/notebooks/bit-soccer.html" rel="alternate"></link><published>2018-10-25T21:00:00+00:00</published><updated>2018-10-25T21:00:00+00:00</updated><author><name>Aquire</name></author><id>tag:None,2018-10-25:/notebooks/bit-soccer.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -19210,10 +19276,10 @@ h6:hover .anchor-link {
 
 
 
-&lt;div id="d8dfe2a8-8f93-4a37-b67f-f9b1714ded33"&gt;&lt;/div&gt;
+&lt;div id="871773c2-d7d1-452a-8d7c-8d3c0ecef05b"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#d8dfe2a8-8f93-4a37-b67f-f9b1714ded33');
+var element = $('#871773c2-d7d1-452a-8d7c-8d3c0ecef05b');
 
 (function(root) {
   function now() {
