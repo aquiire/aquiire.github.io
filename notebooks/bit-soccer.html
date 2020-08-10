@@ -154,9 +154,124 @@ em em.u {
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -235,12 +350,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -253,27 +376,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -469,7 +604,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -479,11 +616,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -731,6 +881,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -769,7 +922,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -891,6 +1044,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -907,16 +1064,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -932,6 +1097,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -982,8 +1152,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1083,119 +1260,70 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This <a href="https://csacademy.com/ieeextreme-practice/task/bit-soccer/statement/">problem</a> appeared in IEEEXtreme12.0 Programming Competition.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Generate-some-test-cases">Generate some test cases<a class="anchor-link" href="#Generate-some-test-cases">&#182;</a></h1>
+<h1 id="Generate-some-test-cases">Generate some test cases<a class="anchor-link" href="#Generate-some-test-cases">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In [48]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">rsg</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">N</span><span class="p">:(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">rsg</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">N</span><span class="p">:(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Constraints</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">N_MAX</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">N_MAX</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span>
 <span class="n">Q_MAX</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">P_MAX</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">40</span><span class="o">-</span><span class="mi">1</span>
 <span class="n">G_MAX</span> <span class="o">=</span> <span class="n">P_MAX</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">gtc</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">p_max</span><span class="p">,</span><span class="n">sample_number</span><span class="p">,</span><span class="n">p_min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g_min</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">g_max</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">gtc</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">p_max</span><span class="p">,</span><span class="n">sample_number</span><span class="p">,</span><span class="n">p_min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g_min</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">g_max</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">g_min</span><span class="p">:</span>
         <span class="n">g_min</span> <span class="o">=</span> <span class="n">p_min</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">g_max</span><span class="p">:</span>
@@ -1203,360 +1331,291 @@ h6:hover .anchor-link {
     <span class="n">P</span> <span class="o">=</span> <span class="n">rsg</span><span class="p">(</span><span class="n">p_min</span><span class="p">,</span><span class="n">p_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">rsg</span><span class="p">(</span><span class="n">g_min</span><span class="p">,</span><span class="n">g_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
 
-    <span class="n">fob</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test/sample-</span><span class="si">%d</span><span class="s1">.in&#39;</span><span class="o">%</span><span class="k">sample_number</span>,&#39;w&#39;)
-    <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\n</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">P</span><span class="o">.</span><span class="n">next</span><span class="p">()))</span>
+    <span class="n">fob</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'test/sample-</span><span class="si">%d</span><span class="s1">.in'</span><span class="o">%</span><span class="k">sample_number</span>,'w')
+    <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="si">%d</span><span class="se">\n</span><span class="si">%d</span><span class="s1">'</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">P</span><span class="o">.</span><span class="n">next</span><span class="p">()))</span>
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">P</span><span class="p">:</span>
-        <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; </span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">p</span>)
-    <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">Q</span>)
+        <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">' </span><span class="si">%d</span><span class="s1">'</span><span class="o">%</span><span class="k">p</span>)
+    <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="si">%d</span><span class="se">\n</span><span class="s1">'</span><span class="o">%</span><span class="k">Q</span>)
     <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-        <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">q</span>)
+        <span class="n">fob</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="si">%d</span><span class="se">\n</span><span class="s1">'</span><span class="o">%</span><span class="k">q</span>)
     <span class="n">fob</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A simple case</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Worst case:</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="n">N_MAX</span><span class="p">,</span><span class="n">Q_MAX</span><span class="p">,</span><span class="n">P_MAX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="n">N_MAX</span><span class="p">,</span><span class="n">Q_MAX</span><span class="p">,</span><span class="n">P_MAX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some other:</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">65535</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">65535</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">40</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">40</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In [63]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="n">N_MAX</span><span class="p">,</span><span class="n">Q_MAX</span><span class="p">,</span><span class="n">P_MAX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">gtc</span><span class="p">(</span><span class="n">N_MAX</span><span class="p">,</span><span class="n">Q_MAX</span><span class="p">,</span><span class="n">P_MAX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">&#182;</a></h1>
+<h1 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">_and</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">condition</span><span class="p">,</span><span class="n">value</span><span class="p">:</span><span class="n">value</span> <span class="k">if</span> <span class="n">condition</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">_and</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">condition</span><span class="p">,</span><span class="n">value</span><span class="p">:</span><span class="n">value</span> <span class="k">if</span> <span class="n">condition</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="n">_not</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span><span class="ow">not</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
     <span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,[</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Q</span><span class="p">:</span>
-        <span class="n">zz</span><span class="o">=</span><span class="n">_not</span><span class="p">((</span><span class="o">~</span><span class="n">P</span><span class="o">&amp;~</span><span class="n">q</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">~</span><span class="n">q</span><span class="p">))</span>
+        <span class="n">zz</span><span class="o">=</span><span class="n">_not</span><span class="p">((</span><span class="o">~</span><span class="n">P</span><span class="o">&~</span><span class="n">q</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">~</span><span class="n">q</span><span class="p">))</span>
         <span class="n">xx</span><span class="o">=</span><span class="n">_and</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
         <span class="n">dd</span><span class="o">=</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">|</span><span class="n">y</span><span class="p">,</span><span class="n">xx</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">dd</span><span class="o">==</span><span class="n">q</span><span class="p">:</span>
-            <span class="k">print</span> <span class="s1">&#39;YES&#39;</span>
+            <span class="k">print</span> <span class="s1">'YES'</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">print</span> <span class="s1">&#39;NO&#39;</span>
+            <span class="k">print</span> <span class="s1">'NO'</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>zz</code> and <code>xx</code> will do the trick. 🤔</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h1>
+<h1 id="Test">Test<a class="anchor-link" href="#Test">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">P</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">P</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">Q</span><span class="o">=</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>YES
 NO
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Write to a file to be uploaded.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In [84]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">file</span> sol.py
-#!/home/amila/tensorflow/bin python2
-import numpy as np
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">%%file</span> sol.py
+<span class="ch">#!/home/amila/tensorflow/bin python2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-_and=np.vectorize(lambda condition,value:
-                  value if condition else 0)
+<span class="n">_and</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">condition</span><span class="p">,</span><span class="n">value</span><span class="p">:</span>
+                  <span class="n">value</span> <span class="k">if</span> <span class="n">condition</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
 
-_not=np.vectorize(lambda value:not value)
+<span class="n">_not</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span><span class="ow">not</span> <span class="n">value</span><span class="p">)</span>
 
-def do(P,Q):
-    P,Q=map(np.array,[P,Q])
-    for q in Q:
-        zz=_not((~P&amp;~q)^(~q))
-        xx=_and(zz,P)
-        dd=reduce(lambda x,y:x|y,xx)
-        if dd==q:
-            print &#39;YES&#39;
-        else:
-            print &#39;NO&#39;
+<span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,[</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Q</span><span class="p">:</span>
+        <span class="n">zz</span><span class="o">=</span><span class="n">_not</span><span class="p">((</span><span class="o">~</span><span class="n">P</span><span class="o">&~</span><span class="n">q</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">~</span><span class="n">q</span><span class="p">))</span>
+        <span class="n">xx</span><span class="o">=</span><span class="n">_and</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+        <span class="n">dd</span><span class="o">=</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">|</span><span class="n">y</span><span class="p">,</span><span class="n">xx</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dd</span><span class="o">==</span><span class="n">q</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s1">'YES'</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s1">'NO'</span>
 
-N=input()
-P=map(int, raw_input().split())
-t=input()
-Q=[input() for _ in range(t)]
-do(P,Q)
+<span class="n">N</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<span class="n">P</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">raw_input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">t</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<span class="n">Q</span><span class="o">=</span><span class="p">[</span><span class="nb">input</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">)]</span>
+<span class="n">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting sol.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generating-outputs">Generating outputs<a class="anchor-link" href="#Generating-outputs">&#182;</a></h2>
+<h2 id="Generating-outputs">Generating outputs<a class="anchor-link" href="#Generating-outputs">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In [80]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%!</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">%%!</span>
 <span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..6<span class="o">}</span>
 <span class="k">do</span>
-python2 sol.py &lt; test/sample-<span class="nv">$i</span>.in &gt; test/sample-<span class="nv">$i</span>.out
+python2 sol.py < test/sample-<span class="nv">$i</span>.in > test/sample-<span class="nv">$i</span>.out
 <span class="k">done</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[80]:</div>
-
-
-
-
 <div class="output_text output_subarea output_execute_result">
 <pre>[]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="More-tests">More tests<a class="anchor-link" href="#More-tests">&#182;</a></h2>
+<h2 id="More-tests">More tests<a class="anchor-link" href="#More-tests">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In [99]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>oj t -c <span class="s2">&quot;python2 sol.py&quot;</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">!</span>oj t -c <span class="s2">"python2 sol.py"</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[<span class="ansi-blue-intense-fg ansi-bold">*</span>] 6 cases found
 
@@ -1589,98 +1648,79 @@ python2 sol.py &lt; test/sample-<span class="nv">$i</span>.in &gt; test/sample-<
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="More-optimizations">More optimizations<a class="anchor-link" href="#More-optimizations">&#182;</a></h1>
+<h1 id="More-optimizations">More optimizations<a class="anchor-link" href="#More-optimizations">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In [106]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">file</span> sol2.py
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">%%file</span> sol2.py
 
-import numpy as np
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-_and=np.vectorize(lambda condition,value:
-                  value if condition else 0)
+<span class="n">_and</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">condition</span><span class="p">,</span><span class="n">value</span><span class="p">:</span>
+                  <span class="n">value</span> <span class="k">if</span> <span class="n">condition</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
 
-_not=np.vectorize(lambda value:not value)
+<span class="n">_not</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span><span class="ow">not</span> <span class="n">value</span><span class="p">)</span>
 
-def do(P,Q):
-    P,Q=map(np.array,[P,Q])
-    for q in Q:
-        zz=_not((~P&amp;~q)^(~q))
-        xx=_and(zz,P)
-        dd=0
-        for x in xx:
-            dd=x|dd
-            if dd==q:
-                print &#39;YES&#39;
-                break
-        else:
-            print &#39;NO&#39;
+<span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,[</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Q</span><span class="p">:</span>
+        <span class="n">zz</span><span class="o">=</span><span class="n">_not</span><span class="p">((</span><span class="o">~</span><span class="n">P</span><span class="o">&~</span><span class="n">q</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">~</span><span class="n">q</span><span class="p">))</span>
+        <span class="n">xx</span><span class="o">=</span><span class="n">_and</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+        <span class="n">dd</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xx</span><span class="p">:</span>
+            <span class="n">dd</span><span class="o">=</span><span class="n">x</span><span class="o">|</span><span class="n">dd</span>
+            <span class="k">if</span> <span class="n">dd</span><span class="o">==</span><span class="n">q</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s1">'YES'</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s1">'NO'</span>
 
-N=input()
-P=map(int, raw_input().split())
-t=input()
-Q=[input() for _ in range(t)]
-do(P,Q)
+<span class="n">N</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<span class="n">P</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">raw_input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">t</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<span class="n">Q</span><span class="o">=</span><span class="p">[</span><span class="nb">input</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">)]</span>
+<span class="n">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overwriting sol2.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In [107]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>oj t -c <span class="s2">&quot;python2 sol2.py&quot;</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">!</span>oj t -c <span class="s2">"python2 sol2.py"</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[<span class="ansi-blue-intense-fg ansi-bold">*</span>] 6 cases found
 
@@ -1713,94 +1753,74 @@ do(P,Q)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since the number of operations are almost the same for using <code>for</code> loop and <code>reduce</code> any difference cannot be observed, this is rather slow.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In [109]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">file</span> sol3.py
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">%%file</span> sol3.py
 
-import numpy as np
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-def do(P,Q):
-    P,Q=map(np.array,[P,Q])
-    for q in Q:
-        zz=((~P&amp;~q)^(~q))==0
-        xx=P[zz]
-        dd=0
-        for x in xx:
-            dd=x|dd
-            if dd==q:
-                print &#39;YES&#39;
-                break
-        else:
-            print &#39;NO&#39;
+<span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,[</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Q</span><span class="p">:</span>
+        <span class="n">zz</span><span class="o">=</span><span class="p">((</span><span class="o">~</span><span class="n">P</span><span class="o">&~</span><span class="n">q</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">~</span><span class="n">q</span><span class="p">))</span><span class="o">==</span><span class="mi">0</span>
+        <span class="n">xx</span><span class="o">=</span><span class="n">P</span><span class="p">[</span><span class="n">zz</span><span class="p">]</span>
+        <span class="n">dd</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xx</span><span class="p">:</span>
+            <span class="n">dd</span><span class="o">=</span><span class="n">x</span><span class="o">|</span><span class="n">dd</span>
+            <span class="k">if</span> <span class="n">dd</span><span class="o">==</span><span class="n">q</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s1">'YES'</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s1">'NO'</span>
 
-N=input()
-P=map(int, raw_input().split())
-t=input()
-Q=[input() for _ in range(t)]
-do(P,Q)
+<span class="n">N</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<span class="n">P</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">raw_input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">t</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<span class="n">Q</span><span class="o">=</span><span class="p">[</span><span class="nb">input</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">)]</span>
+<span class="n">do</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Writing sol3.py
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In [110]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>oj t -c <span class="s2">&quot;python2 sol3.py&quot;</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">!</span>oj t -c <span class="s2">"python2 sol3.py"</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[<span class="ansi-blue-intense-fg ansi-bold">*</span>] 6 cases found
 
@@ -1833,14 +1853,11 @@ do(P,Q)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The above is the faster due to:</p>
 <ol>
@@ -1851,12 +1868,9 @@ do(P,Q)
 </ul>
 </li>
 </ol>
-
 </div>
 </div>
 </div>
- 
-
 
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');

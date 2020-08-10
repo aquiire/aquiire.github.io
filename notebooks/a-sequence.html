@@ -154,9 +154,124 @@ em em.u {
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -235,12 +350,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -253,27 +376,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -469,7 +604,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -479,11 +616,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -731,6 +881,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -769,7 +922,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -891,6 +1044,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -907,16 +1064,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -932,6 +1097,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -982,8 +1152,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1083,142 +1260,83 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I saw it <a href="https://www.peeranswer.com/question/592201f5df6bb4ca0ff5e364">here</a>.</p>
-<h2 id="Claim:">Claim:<a class="anchor-link" href="#Claim:">&#182;</a></h2><p>If $f(n)=n+\lfloor \sqrt n\rfloor$ then the sequence $\{n,f(n),f(f(n)),\ldots\}$ contains a perfect square number.</p>
-<h2 id="Python-verification">Python verification<a class="anchor-link" href="#Python-verification">&#182;</a></h2><p>Define $f$:</p>
-
+<h2 id="Claim:">Claim:<a class="anchor-link" href="#Claim:">¶</a></h2><p>If $f(n)=n+\lfloor \sqrt n\rfloor$ then the sequence $\{n,f(n),f(f(n)),\ldots\}$ contains a perfect square number.</p>
+<h2 id="Python-verification">Python verification<a class="anchor-link" href="#Python-verification">¶</a></h2><p>Define $f$:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">n</span><span class="o">**.</span><span class="mi">5</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">n</span><span class="o">**.</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Define a function to check if some $n$ is a perfect square</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">isSquare</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**.</span><span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">==</span><span class="n">n</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">isSquare</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**.</span><span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">==</span><span class="n">n</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sequence generator begin with $n$:</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">if</span> <span class="n">isSquare</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="n">seq</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">if</span> <span class="n">isSquare</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="n">seq</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some examples</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">):</span><span class="k">print</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">):</span><span class="k">print</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[0]
 [1]
@@ -1287,26 +1405,23 @@ h6:hover .anchor-link {
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Claim seems legit. And there is a clear pattern too. :) ...  <em>Let's try to prove it!</em></p>
-<h2 id="Rough-work">Rough work<a class="anchor-link" href="#Rough-work">&#182;</a></h2><p>Pattern suggests me that this may relate to the fact that,
+<h2 id="Rough-work">Rough work<a class="anchor-link" href="#Rough-work">¶</a></h2><p>Pattern suggests me that this may relate to the fact that,
 $$1+3+5+\cdots+(2n-1)=n^2$$</p>
 <blockquote><p><em>Perhaps mathematical induction??</em></p>
 </blockquote>
 <p>Let's consider the sequence $\{p^2,\ldots\}$.</p>
 <p>Then next sequence will be,</p>
 <p>$\{(p^2+1),(p^2+1)+p,(p^2+1)+p+p=(p+1)^2,\ldots\}$</p>
-<blockquote><h3 id="Reasoning:">Reasoning:<a class="anchor-link" href="#Reasoning:">&#182;</a></h3><p>The first term is $p^2+1$, no explanation needed.</p>
+<blockquote><h3 id="Reasoning:">Reasoning:<a class="anchor-link" href="#Reasoning:">¶</a></h3><p>The first term is $p^2+1$, no explanation needed.</p>
 <p>The second term is $f(p^2+1)=p^2+1+\lfloor \sqrt{p^2+1}\rfloor$.</p>
-<h4 id="How-to-determine-$\lfloor-\sqrt{p^2+1}\rfloor$?">How to determine $\lfloor \sqrt{p^2+1}\rfloor$?<a class="anchor-link" href="#How-to-determine-$\lfloor-\sqrt{p^2+1}\rfloor$?">&#182;</a></h4><p>For $p&gt;0$, $p^2&lt;p^2+1&lt;p^2+1+2p=(p+1)^2$</p>
+<h4 id="How-to-determine-$\lfloor-\sqrt{p^2+1}\rfloor$?">How to determine $\lfloor \sqrt{p^2+1}\rfloor$?<a class="anchor-link" href="#How-to-determine-$\lfloor-\sqrt{p^2+1}\rfloor$?">¶</a></h4><p>For $p>0$, $p^2<p^2+1&lt;p^2+1+2p=(p+1)^2$&lt; p>
 <p>So, $\lfloor \sqrt{p^2+1}\rfloor=p$</p>
 <p>Then the second term is $p^2+1+p$</p>
 <p>Following a similar argument, we can figure out the third term of the sequence to be $(p+1)^2$</p>
@@ -1320,31 +1435,28 @@ $$1+3+5+\cdots+(2n-1)=n^2$$</p>
 <p>So what about the sequence begins with $a_0+1$ ?</p>
 <p>Let's say that sequence is $B=\left\{b_i|i\in\mathbb{N}\wedge b_0=a_0+1\wedge b_{i+1}=f(b_i)\right\}$</p>
 <p>There are many cases to consider.</p>
-<h3 id="Case-1:-$\-\--a_0=m^2-1,-\-m\in\mathbb{N}$">Case 1: $\ \  a_0=m^2-1, \ m\in\mathbb{N}$<a class="anchor-link" href="#Case-1:-$\-\--a_0=m^2-1,-\-m\in\mathbb{N}$">&#182;</a></h3><p>In this case we don't have to worry because $b_0=a_0+1=(m^2-1)+1=m^2$. <em>Case closed</em> ;)</p>
-<h3 id="Case-2:-otherwise">Case 2: <em>otherwise</em><a class="anchor-link" href="#Case-2:-otherwise">&#182;</a></h3><blockquote><p>Remember that we have already done the case where $a_0=m^2$ for some $m\in\mathbb{N}$</p>
+<h3 id="Case-1:-$\-\--a_0=m^2-1,-\-m\in\mathbb{N}$">Case 1: $\ \  a_0=m^2-1, \ m\in\mathbb{N}$<a class="anchor-link" href="#Case-1:-$\-\--a_0=m^2-1,-\-m\in\mathbb{N}$">¶</a></h3><p>In this case we don't have to worry because $b_0=a_0+1=(m^2-1)+1=m^2$. <em>Case closed</em> ;)</p>
+<h3 id="Case-2:-otherwise">Case 2: <em>otherwise</em><a class="anchor-link" href="#Case-2:-otherwise">¶</a></h3><blockquote><p>Remember that we have already done the case where $a_0=m^2$ for some $m\in\mathbb{N}$</p>
 </blockquote>
 <p>Now $b_0=a_0+1$. What would be $b_1$? Would it be $a_1+1$ or otherwise?</p>
-<p>I think it is easy to think about $a_0$ as something like $m^2+k$ where $m^2&lt;a_0&lt;(m+1)^2$ i.e. $\lfloor\sqrt{a_0}\rfloor=m\Rightarrow a_1=f(a_0)=a_0+m$.</p>
+<p>I think it is easy to think about $a_0$ as something like $m^2+k$ where $m^2<a_0&lt;(m+1)^2$ i.e. $\lfloor\sqrt{a_0}\rfloor="m\Rightarrow" a_1="f(a_0)=a_0+m$.&lt;/p">
 <blockquote><p><strong>Sidenote</strong>: Should  this be a lemma in our proof?</p>
-<p>$m^2&lt;a_0&lt;(m+1)^2\Rightarrow\lfloor\sqrt{a_0}\rfloor=m$</p>
+<p>$m^2<a_0&lt;(m+1)^2\rightarrow\lfloor\sqrt{a_0}\rfloor=m$&lt; p>
 <p>If it comes frequently, I think we should consider about it.</p>
 </blockquote>
-<p>Here $0&lt;k&lt;2m+1$ (Actually $k&lt;2m$ because we have already cased $a_0=m^2-1$, but no problem). Would this help us to determine $b_1$?</p>
+<p>Here $0<k&lt;2m+1$ (actually $k&lt;2m$ because we have already cased $a_0="m^2-1$," but no problem). would this help us to determine $b_1$?&lt; p>
 <p>Now we know that $a_1=m^2+k+m$. There are 3 cases with regard to $a_1$:</p>
 <ul>
-<li>$m^2&lt;a_1&lt;(m+1)^2$</li>
+<li>$m^2<a_1&lt;(m+1)^2$&lt; li>
 <li>$a_1=(m+1)^2$</li>
-<li>$(m+1)^2&lt;a_1&lt;(m+2)^2$</li>
+<li>$(m+1)^2<a_1&lt;(m+2)^2$&lt; li>
 </ul>
-<p>We can say that $a_1$ doesn't exceed or equal to $(m+2)^2$ because $a_1=m^2+k+m&lt;m^2+(2m+1)+m&lt;(m+2)^2$</p>
+<p>We can say that $a_1$ doesn't exceed or equal to $(m+2)^2$ because $a_1=m^2+k+m<m^2+(2m+1)+m&lt;(m+2)^2$&lt; p>
 <p>We know $b_0$ is not a perfect square for sure. So $b_1=f(b_0)=b_0+m$.</p>
 <p>This implies that $b_1=a_1+1$</p>
-
 </div>
 </div>
 </div>
- 
-
 
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');

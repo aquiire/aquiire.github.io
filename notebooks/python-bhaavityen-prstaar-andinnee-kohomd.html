@@ -157,9 +157,124 @@ em em.u {
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -238,12 +353,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -256,27 +379,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -472,7 +607,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -482,11 +619,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -734,6 +884,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -772,7 +925,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -894,6 +1047,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -910,16 +1067,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -935,6 +1100,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -985,8 +1155,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1086,47 +1263,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>Python</code> යනු දත්ත වේදයේ (Data Science) බහුලවම භාවිත වන ක්‍රමලේඛ භාෂාවයි. දත්ත විශ්ලේෂණය පහසු කරවන එක මඟකි, ප්‍රස්තාර. Python යොදා ගෙන ප්‍රස්තාර නිර්මාණයට උපයෝගී කර ගන්නා libraries කිහිපයක්:</p>
 <ul>
@@ -1135,77 +1273,56 @@ h6:hover .anchor-link {
 <li><a href="bokeh.pydata.org">Bokeh</a></li>
 </ul>
 <p>මේවා අතරින් ප්‍රමුඛතමයා <code>matplotlib</code> වේ. <code>seaborn</code> යනු <code>matplotlib</code> හිම දිගුවකි. <code>matplotlib</code> තවම <a href="https://github.com/matplotlib/matplotlib/issues/8765">සිංහල බසට පහසුකම් සලසන්නේ නැති</a> බැවින් මේ ලිපියෙන් අවධානය යොමු කරන්නේ <code>bokeh</code> වෙතයි.</p>
-<h2 id="bokeh-ස්ථාපනය-කිරීම"><code>bokeh</code> &#3523;&#3530;&#3502;&#3535;&#3508;&#3505;&#3514; &#3482;&#3538;&#3515;&#3539;&#3512;<a class="anchor-link" href="#bokeh-ස්ථාපනය-කිරීම">&#182;</a></h2><p>Python Package Manager ඔබේ පරිගණකයේ ස්ථාපනය ව පවතී නම්, විධාන පිවිසුමේ (command prompt) හෝ පර්යන්තයේ (Terminal),</p>
+<h2 id="bokeh-ස්ථාපනය-කිරීම"><code>bokeh</code> ස්ථාපනය කිරීම<a class="anchor-link" href="#bokeh-ස්ථාපනය-කිරීම">¶</a></h2><p>Python Package Manager ඔබේ පරිගණකයේ ස්ථාපනය ව පවතී නම්, විධාන පිවිසුමේ (command prompt) හෝ පර්යන්තයේ (Terminal),</p>
 <div class="highlight"><pre><span></span>pip install bokeh
 </pre></div>
 <p>විධානය මඟින් <code>bokeh</code> පහසුවෙන් ස්ථාපනය කළ හැකිය.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="මූලික-නිදසුනක්">&#3512;&#3542;&#3517;&#3538;&#3482; &#3505;&#3538;&#3503;&#3523;&#3540;&#3505;&#3482;&#3530;<a class="anchor-link" href="#මූලික-නිදසුනක්">&#182;</a></h2>
+<h2 id="මූලික-නිදසුනක්">මූලික නිදසුනක්<a class="anchor-link" href="#මූලික-නිදසුනක්">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>මෙම සරල නිදසුනෙන් මෙරට 2015 වසරේ මාසික වර්ෂාපතනය විචලනය වූ අන්දම නිරූපණය කෙරේ. (<a href="http://sdwebx.worldbank.org/climateportal/index.cfm?page=downscaled_data_download&amp;menu=historical">මූලාශ්‍රය</a>)</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
 <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span>
 <span class="n">output_notebook</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-    <div class="bk-root">
-        <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="49994310-fef8-431b-9967-51b1be43c67c">Loading BokehJS ...</span>
-    </div>
+<div class="output_html rendered_html output_subarea">
+<div class="bk-root">
+<a class="bk-logo bk-logo-small bk-logo-notebook" href="https://bokeh.pydata.org" target="_blank"></a>
+<span id="49994310-fef8-431b-9967-51b1be43c67c">Loading BokehJS ...</span>
 </div>
-
 </div>
-
+</div>
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-
-
-<div id="cecf96d8-bfae-4f2d-9cfd-933c797032b5"></div>
-<div class="output_subarea output_javascript ">
+<div id="da4fd5e6-daa2-487c-9aa5-9f9622eaa54e"></div>
+<div class="output_subarea output_javascript">
 <script type="text/javascript">
-var element = $('#cecf96d8-bfae-4f2d-9cfd-933c797032b5');
+var element = $('#da4fd5e6-daa2-487c-9aa5-9f9622eaa54e');
 
 (function(root) {
   function now() {
@@ -1356,45 +1473,32 @@ var element = $('#cecf96d8-bfae-4f2d-9cfd-933c797032b5');
 }(window));
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">rainfall</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.8749</span><span class="p">,</span><span class="mf">153.87</span><span class="p">,</span><span class="mf">101.196</span><span class="p">,</span><span class="mf">202.21</span><span class="p">,</span><span class="mf">100.853</span><span class="p">,</span><span class="mf">66.8216</span><span class="p">,</span><span class="mf">99.5796</span><span class="p">,</span><span class="mf">141.59</span><span class="p">,</span><span class="mf">219.311</span><span class="p">,</span><span class="mf">303.785</span><span class="p">,</span><span class="mf">405.224</span><span class="p">,</span><span class="mf">216.646</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">rainfall</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.8749</span><span class="p">,</span><span class="mf">153.87</span><span class="p">,</span><span class="mf">101.196</span><span class="p">,</span><span class="mf">202.21</span><span class="p">,</span><span class="mf">100.853</span><span class="p">,</span><span class="mf">66.8216</span><span class="p">,</span><span class="mf">99.5796</span><span class="p">,</span><span class="mf">141.59</span><span class="p">,</span><span class="mf">219.311</span><span class="p">,</span><span class="mf">303.785</span><span class="p">,</span><span class="mf">405.224</span><span class="p">,</span><span class="mf">216.646</span><span class="p">]</span>
 <span class="n">month</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;2015 වසරේ මාසික වර්ෂාපතනය&#39;</span><span class="p">,</span><span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;මාසය&#39;</span><span class="p">,</span><span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;වර්ෂාපතනය (mm)&#39;</span><span class="p">,)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'2015 වසරේ මාසික වර්ෂාපතනය'</span><span class="p">,</span><span class="n">x_axis_label</span><span class="o">=</span><span class="s1">'මාසය'</span><span class="p">,</span><span class="n">y_axis_label</span><span class="o">=</span><span class="s1">'වර්ෂාපතනය (mm)'</span><span class="p">,)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">month</span><span class="p">,</span> <span class="n">rainfall</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-
-    <div class="bk-root">
-        <div class="bk-plotdiv" id="50c44a66-9dd1-4d20-9a6d-2a21657247a3"></div>
-    </div>
+<div class="output_html rendered_html output_subarea">
+<div class="bk-root">
+<div class="bk-plotdiv" id="50c44a66-9dd1-4d20-9a6d-2a21657247a3"></div>
+</div>
 <script type="text/javascript">
   
   (function(root) {
@@ -1540,15 +1644,10 @@ var element = $('#cecf96d8-bfae-4f2d-9cfd-933c797032b5');
   }(window));
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
- 
-
+</div>
 
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
