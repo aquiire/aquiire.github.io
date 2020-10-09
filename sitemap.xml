@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/index.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/pages/about.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/notebooks/kotttt-bmunnaa.html</loc>
+<lastmod>2020-10-09T22:51:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -236,357 +243,385 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/art.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/category/articles.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/category/notebooks.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/gdy.html</loc>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/drshny.html</loc>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/stutt.html</loc>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/buddhtvy.html</loc>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/art.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/cartoon.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/telecom.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/essay.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/philosophy.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/humanity.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/religion.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/anarchism.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/poetry.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/vim.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/terminal.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/minimalist.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/knowledge.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/meta-physics.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/bhubuut.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/literature.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/ai.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/hobbies.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/fitness.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/cycling.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/puzzle.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/probablity.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/bayesian.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/data-science.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/annotation.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/human-rights.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/image-processing.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/optical-illusion.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/cognition.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/perception.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/python.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/reality.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/computer-vision.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/poem.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/history.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/competitive-programming.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/algorithms.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/maths.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/science.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/gods.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/atheism.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/existence.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/consciousness.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/life.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/datascience.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/digital-communications.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/probability.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/author/aquire.html</loc>
-<lastmod>2020-09-12T22:57:59-00:00</lastmod>
+<lastmod>2020-10-10T00:27:19-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
